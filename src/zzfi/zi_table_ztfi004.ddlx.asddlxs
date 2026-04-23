@@ -1,0 +1,116 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Ztfi004', 
+    typeNamePlural: 'Ztfi004s', 
+    title: {
+      type: #STANDARD, 
+      label: '现金流量表配置', 
+      value: 'Companycode'
+    }
+  }
+}
+annotate view ZI_TABLE_Ztfi004 with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TABLE_Ztfi004', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: '现金流量表配置', 
+    position: 1 
+  } ]
+  Companycode;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  Fiitem;
+  
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  @UI.lineItem: [ {
+    position: 3 
+  } ]
+  Fisuit;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  @UI.lineItem: [ {
+    position: 4 
+  } ]
+  Fitext;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  @UI.lineItem: [ {
+    position: 5 
+  } ]
+  Fitype;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  @UI.lineItem: [ {
+    position: 6 
+  } ]
+  Fisign;
+  
+  @UI.identification: [ {
+    position: 7 
+  } ]
+  @UI.lineItem: [ {
+    position: 7 
+  } ]
+  Paymentdifferencereason;
+  
+  @UI.identification: [ {
+    position: 8 
+  } ]
+  @UI.lineItem: [ {
+    position: 8 
+  } ]
+  Itemfrom;
+  
+  @UI.identification: [ {
+    position: 9 
+  } ]
+  @UI.lineItem: [ {
+    position: 9 
+  } ]
+  Itemto;
+  
+  @UI.identification: [ {
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 
+  } ]
+  Glaccountfrom;
+  
+  @UI.identification: [ {
+    position: 11 
+  } ]
+  Glaccountto;
+  
+  @UI.identification: [ {
+    position: 12 
+  } ]
+  Debitcreditcode;
+  
+  @UI.identification: [ {
+    position: 13 
+  } ]
+  ConfigDeprecationCode;
+}

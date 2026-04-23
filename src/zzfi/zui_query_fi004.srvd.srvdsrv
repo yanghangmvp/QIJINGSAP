@@ -1,0 +1,4 @@
+@EndUserText.label: 'TA-综合管理维度'
+define service ZUI_QUERY_FI004 {
+  expose zc_query_FI004 as fi004;
+}

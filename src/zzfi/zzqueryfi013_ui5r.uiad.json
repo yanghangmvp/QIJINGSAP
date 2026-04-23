@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "固定资产变动明细表",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "固定资产变动明细表"
+  },
+  "ui5AppDetails": {
+    "appId": "zzqueryfi013"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_7C35A6E4AE2E0F3056305297E09D77193D138010_TM",
+    "semanticObject": "zzqueryfi013",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_7C35A6E4AE2E0F3056305297E09D77193D138010_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "固定资产变动明细表",
+        "subtitle": "固定资产变动明细表"
+      }
+    }
+  ]
+}

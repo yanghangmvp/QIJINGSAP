@@ -1,0 +1,64 @@
+managed with additional save implementation in class ZBP_I_CONFIG_ZTFI006 unique;
+strict;
+with draft;
+define behavior for ZI_CONFIG_ZTFI006_S alias FI006
+draft table ZZTFI006_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _FI006all { create ( features : instance ); with draft; }
+
+}
+
+define behavior for ZI_CONFIG_ZTFI006 alias FI006all ##UNMAPPED_FIELD
+persistent table ZZTFI006
+draft table ZZTFI006_D
+lock dependent by _FI006
+authorization dependent by _FI006
+{
+  field ( mandatory : create )
+   Zzenumb;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   Zzenumb;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZZTFI006
+  {
+    Zzenumb = ZZENUMB;
+    Zzdatabase = ZZDATABASE;
+    Zztable = ZZTABLE;
+    Zzpack = ZZPACK;
+  }
+
+  association _FI006 { with draft; }
+
+}

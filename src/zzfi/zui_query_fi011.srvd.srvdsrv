@@ -1,0 +1,4 @@
+@EndUserText.label: '制费成本分摊'
+define service ZUI_QUERY_FI011 {
+  expose ZC_QUERY_FI011;
+}

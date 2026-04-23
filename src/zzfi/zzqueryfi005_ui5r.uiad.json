@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "TA-科目余额"
+  },
+  "ui5AppDetails": {
+    "appId": "zzqueryfi005"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_AFD736072EC1C8FBE911415131F5B665B3124F3B_TM",
+    "semanticObject": "zzqueryfi005",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_AFD736072EC1C8FBE911415131F5B665B3124F3B_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "TA-科目余额",
+        "subtitle": "TA-科目余额"
+      }
+    }
+  ]
+}

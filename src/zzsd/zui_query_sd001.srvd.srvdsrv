@@ -1,0 +1,4 @@
+@EndUserText.label: '客户主数据'
+define service ZUI_QUERY_SD001 {
+  expose zc_query_sd001 as sd001;
+}

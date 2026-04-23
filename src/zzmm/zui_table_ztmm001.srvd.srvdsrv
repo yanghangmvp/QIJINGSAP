@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_TABLE_Ztmm001_S'
+define service ZUI_TABLE_ZTMM001 {
+  expose ZI_TABLE_ZTMM001_S as Ztmm001All;
+  expose ZI_TABLE_ZTMM001 as Ztmm001;
+}

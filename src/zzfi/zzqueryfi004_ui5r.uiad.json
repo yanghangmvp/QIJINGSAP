@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "TA-综合管理维度"
+  },
+  "ui5AppDetails": {
+    "appId": "zzqueryfi004"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_704A04009C7B2AF00E39949BB2E4A86F7DB765A4_TM",
+    "semanticObject": "zzqueryfi004",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_704A04009C7B2AF00E39949BB2E4A86F7DB765A4_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "TA-综合管理维度",
+        "subtitle": "TA-综合管理维度"
+      }
+    }
+  ]
+}

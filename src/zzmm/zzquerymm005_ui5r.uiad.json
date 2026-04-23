@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "库龄报表"
+  },
+  "ui5AppDetails": {
+    "appId": "zzquerymm005"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_868FEB7EDC369998B3C8BF10E61A767C1DC9FC58_TM",
+    "semanticObject": "zzquerymm005",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_868FEB7EDC369998B3C8BF10E61A767C1DC9FC58_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "库龄报表",
+        "subtitle": "库龄报表"
+      }
+    }
+  ]
+}

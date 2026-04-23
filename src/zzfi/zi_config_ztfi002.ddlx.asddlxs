@@ -1,0 +1,195 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Ztfi002', 
+    typeNamePlural: 'Ztfi002s', 
+    title: {
+      type: #STANDARD, 
+      label: '会计凭证暂存行项目表', 
+      value: 'Reference1indocumentheader'
+    }
+  }
+}
+annotate view ZI_CONFIG_Ztfi002 with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_CONFIG_Ztfi002', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: '会计凭证暂存行项目表', 
+    position: 1 
+  } ]
+  Reference1indocumentheader;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  Datasource;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'Accountingdocumentitem'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'Accountingdocumentitem'
+  } ]
+  Accountingdocumentitem;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'Glaccount'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'Glaccount'
+  } ]
+  Glaccount;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'Amountintransactioncurrency'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'Amountintransactioncurrency'
+  } ]
+  Amountintransactioncurrency;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'Amountincompanycodecurrency'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'Amountincompanycodecurrency'
+  } ]
+  Amountincompanycodecurrency;
+  
+  @UI.identification: [ {
+    position: 7 , 
+    label: 'Debitcreditcode'
+  } ]
+  @UI.lineItem: [ {
+    position: 7 , 
+    label: 'Debitcreditcode'
+  } ]
+  Debitcreditcode;
+  
+  @UI.identification: [ {
+    position: 8 , 
+    label: 'Documentitemtext'
+  } ]
+  @UI.lineItem: [ {
+    position: 8 , 
+    label: 'Documentitemtext'
+  } ]
+  Documentitemtext;
+  
+  @UI.identification: [ {
+    position: 9 , 
+    label: 'Reasoncode'
+  } ]
+  @UI.lineItem: [ {
+    position: 9 , 
+    label: 'Reasoncode'
+  } ]
+  Reasoncode;
+  
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Assignmentreference'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'Assignmentreference'
+  } ]
+  Assignmentreference;
+  
+  @UI.identification: [ {
+    position: 11 , 
+    label: 'Profitcenter'
+  } ]
+  Profitcenter;
+  
+  @UI.identification: [ {
+    position: 12 , 
+    label: 'Costcenter'
+  } ]
+  Costcenter;
+  
+  @UI.identification: [ {
+    position: 13 , 
+    label: 'Functionalarea'
+  } ]
+  Functionalarea;
+  
+  @UI.identification: [ {
+    position: 14 , 
+    label: 'Wbselement'
+  } ]
+  Wbselement;
+  
+  @UI.identification: [ {
+    position: 15 , 
+    label: 'Customer'
+  } ]
+  Customer;
+  
+  @UI.identification: [ {
+    position: 16 , 
+    label: 'Specialglcode'
+  } ]
+  Specialglcode;
+  
+  @UI.identification: [ {
+    position: 17 , 
+    label: 'Altvrecnclnaccts'
+  } ]
+  Altvrecnclnaccts;
+  
+  @UI.identification: [ {
+    position: 18 , 
+    label: 'Creditcontrolarea'
+  } ]
+  Creditcontrolarea;
+  
+  @UI.identification: [ {
+    position: 19 , 
+    label: 'Vendor'
+  } ]
+  Vendor;
+  
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Duecalculationbasedate'
+  } ]
+  Duecalculationbasedate;
+  
+  @UI.identification: [ {
+    position: 21 , 
+    label: 'Paymentreference'
+  } ]
+  Paymentreference;
+  
+  @UI.identification: [ {
+    position: 22 , 
+    label: 'Tradingpartner'
+  } ]
+  Tradingpartner;
+  
+  @UI.identification: [ {
+    position: 23 , 
+    label: 'Zz005'
+  } ]
+  Zz005;
+}

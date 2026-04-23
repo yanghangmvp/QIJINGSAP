@@ -1,0 +1,97 @@
+managed implementation in class ZBP_R_CONFIG_ZTFI010 unique;
+strict;
+with draft;
+extensible;
+define behavior for ZR_CONFIG_ZTFI010 alias ZTFI010
+persistent table zztfi010
+extensible
+draft table zztfi010_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+early numbering   // 设置提前编号，这样主键值就会在BO创建前显示
+{
+  //  field ( mandatory : create )
+  //   UUID;
+
+  field ( readonly )
+  UUID,
+  Originalreferencedocumenttype,
+  Businesstransactiontype,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+  field ( mandatory )
+  reference1indocumentheader,
+  datasource,
+  accountingdocumentitem;
+
+  //  field ( readonly : update )
+  //   UUID;
+
+
+  create;
+  update ( features : instance );
+  delete ( features : instance );
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action ( features : instance ) Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  // 在创建的时候设置字段默认值
+  determination SetDefaultValues on modify { create; }
+
+  action ( features : instance ) zsave result [1] $self;
+
+  mapping for zztfi010 corresponding extensible
+    {
+      UUID                          = UUID;
+      Reference1indocumentheader    = REFERENCE1INDOCUMENTHEADER;
+      Datasource                    = DATASOURCE;
+      Originalreferencedocumenttype = ORIGINALREFERENCEDOCUMENTTYPE;
+      Businesstransactiontype       = BUSINESSTRANSACTIONTYPE;
+      Companycode                   = COMPANYCODE;
+      Accountingdocumenttype        = ACCOUNTINGDOCUMENTTYPE;
+      Postingdate                   = POSTINGDATE;
+      Documentdate                  = DOCUMENTDATE;
+      Transactioncurrency           = TRANSACTIONCURRENCY;
+      Exchangerate                  = EXCHANGERATE;
+      Accountingdocumentheadertext  = ACCOUNTINGDOCUMENTHEADERTEXT;
+      Accountingdocumentitem        = ACCOUNTINGDOCUMENTITEM;
+      Glaccount                     = GLACCOUNT;
+      Amountintransactioncurrency   = AMOUNTINTRANSACTIONCURRENCY;
+      Amountincompanycodecurrency   = AMOUNTINCOMPANYCODECURRENCY;
+      Debitcreditcode               = DEBITCREDITCODE;
+      Documentitemtext              = DOCUMENTITEMTEXT;
+      Masterfixedasset              = MASTERFIXEDASSET;
+      Fixedasset                    = FIXEDASSET;
+      Assettransactiontype          = ASSETTRANSACTIONTYPE;
+      Reasoncode                    = REASONCODE;
+      Assignmentreference           = ASSIGNMENTREFERENCE;
+      Altvrecnclnaccts              = ALTVRECNCLNACCTS;
+      Costcenter                    = COSTCENTER;
+      Customer                      = CUSTOMER;
+      Duecalculationbasedate        = DUECALCULATIONBASEDATE;
+      Functionalarea                = FUNCTIONALAREA;
+      Profitcenter                  = PROFITCENTER;
+      Tradingpartner                = TRADINGPARTNER;
+      Material                      = MATERIAL;
+      Salesorder                    = SALESORDER;
+      Salesorderitem                = SALESORDERITEM;
+      Vendor                        = VENDOR;
+      Wbselement                    = WBSELEMENT;
+      Zz005                         = ZZ005;
+      Zflag                         = zflag;
+      CreatedBy                     = CREATED_BY;
+      CreatedAt                     = CREATED_AT;
+      LastChangedBy                 = LAST_CHANGED_BY;
+      LastChangedAt                 = LAST_CHANGED_AT;
+      LocalLastChangedAt            = LOCAL_LAST_CHANGED_AT;
+    }
+
+}

@@ -1,0 +1,114 @@
+managed implementation in class ZBP_R_ZT_REST_CONF unique;
+strict;
+with draft;
+define behavior for ZR_ZT_REST_CONF alias conf
+persistent table zzt_rest_conf
+draft table zzt_rest_conf_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+
+{
+  field ( mandatory : create )
+  Zznumb;
+
+  field ( readonly )
+  Zzrequest,
+  Zzresponse,
+  CreatedAt,
+  CreatedBy,
+  LastChangedAt,
+  LastChangedBy,
+  LocalLastChangedAt;
+
+  field ( readonly : update )
+  Zznumb;
+
+  create;
+  update;
+  delete;
+
+
+  side effects
+  {
+    field Zzipara affects field Zzrequest;
+    field Zzopara affects field zzresponse; }
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+
+  determination createJson on modify { field Zzipara, Zzopara; }
+  validation validateStruct on save { create; update; field Zzfname, Zzipara, Zzopara; }
+  draft determine action Prepare
+  {
+    validation validateStruct; }
+
+  action Refresh result [1] $self;
+
+
+  association _append { create ( features : instance ); }
+
+  mapping for zzt_rest_conf
+    {
+      Zznumb             = zznumb;
+      Zzname             = zzname;
+      Zzisst             = zzisst;
+      Zzfname            = zzfname;
+      Zzipara            = zzipara;
+      Zzopara            = zzopara;
+      ZztsysID           = zztsysid;
+      Zzresponse         = zzresponse;
+      Zzrequest          = zzrequest;
+      MimeType           = mimetype;
+      Zzurlp             = zzurlp;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LastChangedBy      = last_changed_by;
+      LastChangedAt      = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+}
+define behavior for ZR_ZT_REST_APPEND alias append
+persistent table zzt_rest_append
+draft table zzt_rest_appen_d
+lock dependent by _conf
+authorization dependent by _conf
+{
+  field ( mandatory : create )
+  Zzappac,
+  Zzappkey;
+
+  field ( readonly )
+  Zznumb,
+  CreatedAt,
+  CreatedBy,
+  LastChangedAt,
+  LastChangedBy,
+  LocalLastChangedAt;
+
+  field ( readonly : update )
+
+  Zzappac,
+  Zzappkey;
+
+  update;
+  delete;
+
+  mapping for zzt_rest_append
+    {
+      Zznumb             = zznumb;
+      Zzappac            = zzappac;
+      Zzappkey           = zzappkey;
+      Zzappvalue         = zzappvalue;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LastChangedBy      = last_changed_by;
+      LastChangedAt      = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+
+  association _conf;
+
+}

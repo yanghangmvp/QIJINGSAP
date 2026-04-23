@@ -1,0 +1,12 @@
+@EndUserText: {
+  label: '此项的服务定义 ZC_TABLE_ZTFI001'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TABLE_ZTFI001'
+  }
+}
+define service ZUI_TABLE_ZTFI001_O4 {
+  expose ZC_TABLE_ZTFI001 as FI001;
+  expose ZC_TABLE_ZTFI002 as FI002;
+}

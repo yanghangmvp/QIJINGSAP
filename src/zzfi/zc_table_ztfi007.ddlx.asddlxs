@@ -1,0 +1,301 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: '回款流水处理平台',
+    typeNamePlural: '回款流水处理平台',
+    title: { type: #STANDARD, value: 'Recordid' },
+    description: { value: 'Recordid' }
+   }
+ }
+annotate view ZC_TABLE_ZTFI007 with
+{
+  @UI.facet: [ {
+    label: '常规信息',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+
+  @UI.lineItem: [ { position: 10 },
+                  { position: 01  ,type : #FOR_ACTION, dataAction: 'zlsbs', label: '预制凭证', invocationGrouping: #CHANGE_SET },
+                  { position: 02  ,type : #FOR_ACTION, dataAction: 'zhklx', label: '回款认领', invocationGrouping: #CHANGE_SET }
+                ]
+  @UI.identification: [ { position: 10 } ,
+                        { position: 01  ,type : #FOR_ACTION, dataAction: 'zlsbs', label: '预制凭证', invocationGrouping: #CHANGE_SET },
+                        { position: 02  ,type : #FOR_ACTION, dataAction: 'zhklx', label: '回款认领', invocationGrouping: #CHANGE_SET }]
+  @EndUserText.label: '明细ID'
+  @UI.selectionField: [ { position: 10 } ]
+  Recordid;
+
+  @EndUserText.label: '公司代码'
+  @UI.identification: [ {
+    position: 20
+  } ]
+  @UI.lineItem: [ {
+    position: 20
+  } ]
+  @Consumption.valueHelpDefinition: [{ entity: {name: 'I_CompanyCodeVH' , element: 'CompanyCode' } }]
+  @UI.selectionField: [ { position: 20 }  ]
+  @Consumption.filter: { mandatory:true, selectionType: #SINGLE ,defaultValue : 'GH00' }
+  Unitno;
+
+  @EndUserText.label: '本方账号'
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+  @UI.selectionField: [ { position: 30 }  ]
+  Accountno;
+
+  @EndUserText.label: '本方户名'
+  @UI.identification: [ {
+    position: 40
+  } ]
+  @UI.lineItem: [ {
+    position: 40
+  } ]
+  Accountname;
+
+  @EndUserText.label: '本方金融机构编码'
+  @UI.identification: [ {
+    position: 50
+  } ]
+  @UI.lineItem: [ {
+    position: 50
+  } ]
+  Bankno;
+
+  @EndUserText.label: '本方金融机构名称'
+  @UI.identification: [ {
+    position: 60
+  } ]
+  @UI.lineItem: [ {
+    position: 60
+  } ]
+  Openbank;
+
+  @EndUserText.label: '交易日期'
+  @UI.identification: [ {
+    position: 70
+  } ]
+  @UI.lineItem: [ {
+    position: 70
+  } ]
+  @UI.selectionField: [ { position: 40 }  ]
+  //  @Consumption.filter: { mandatory:true }
+  Recorddate;
+
+  @EndUserText.label: '收支方向'
+  @UI.identification: [ {
+    position: 80
+  } ]
+  @UI.lineItem: [ {
+    position: 80
+  } ]
+  Balancedir;
+
+  @EndUserText.label: '交易币种'
+  @UI.identification: [ {
+    position: 90
+  } ]
+  @UI.lineItem: [ {
+    position: 90
+  } ]
+  Currencyno;
+
+  @EndUserText.label: '交易金额'
+  @UI.identification: [ {
+    position: 100
+  } ]
+  @UI.lineItem: [ {
+    position: 100
+  } ]
+  Amount;
+
+  @EndUserText.label: '对方账号'
+  @UI.identification: [ {
+    position: 110
+  } ]
+  @UI.lineItem: [ {
+    position: 110
+  } ]
+  Opaccountno;
+
+  @EndUserText.label: '对方户名'
+  @UI.identification: [ {
+    position: 120
+  } ]
+  @UI.lineItem: [ {
+    position: 120
+  } ]
+  Opaccountname;
+
+  @EndUserText.label: '对方开户行名'
+  @UI.identification: [ {
+    position: 130
+  } ]
+  @UI.lineItem: [ {
+    position: 130
+  } ]
+  Opbranchbankname;
+
+  @EndUserText.label: '银行流水号'
+  @UI.identification: [ {
+    position: 140
+  } ]
+  @UI.lineItem: [ {
+    position: 140
+  } ]
+  @UI.selectionField: [ { position: 50 }  ]
+  Hostid;
+
+  @EndUserText.label: '银行单据号'
+  @UI.identification: [ {
+    position: 150
+  } ]
+  @UI.lineItem: [ {
+    position: 150
+  } ]
+  Ticketn;
+
+  @EndUserText.label: '摘要'
+  @UI.identification: [ {
+    position: 160
+  } ]
+  @UI.lineItem: [ {
+    position: 160
+  } ]
+  Summary;
+
+  @EndUserText.label: '备注'
+  @UI.identification: [ {
+    position: 170
+  } ]
+  @UI.lineItem: [ {
+    position: 170
+  } ]
+  Remark;
+
+  @EndUserText.label: '附言'
+  @UI.identification: [ {
+    position: 180
+  } ]
+  @UI.lineItem: [ {
+    position: 180
+  } ]
+  Postscript;
+
+  @EndUserText.label: '银行记账时间'
+  @UI.identification: [ {
+    position: 190
+  } ]
+  @UI.lineItem: [ {
+    position: 190
+  } ]
+  Hosttime;
+
+  @EndUserText.label: '客商编码'
+  @UI.identification: [ {
+    position: 200
+  } ]
+  @UI.lineItem: [ {
+    position: 200
+  } ]
+  @Consumption.valueHelpDefinition: [{ entity: {name: 'I_Customer' , element: 'Customer' } }]
+  @UI.selectionField: [ { position: 60 }  ]
+  Merchantnumber;
+
+  @EndUserText.label: '客商名称'
+  @UI.identification: [ {
+    position: 210
+  } ]
+  @UI.lineItem: [ {
+    position: 210
+  } ]
+  Merchantname;
+
+  @EndUserText.label: '门店编码'
+  @UI.identification: [ {
+    position: 211
+  } ]
+  @UI.lineItem: [ {
+    position: 211
+  } ]
+  @Consumption.valueHelpDefinition: [{ entity: {name: 'I_Customer' , element: 'Customer' } }]
+  @UI.selectionField: [ { position: 60 }  ]
+  Storecode;
+
+  @EndUserText.label: '门店名称'
+  @UI.identification: [ {
+    position: 212
+  } ]
+  @UI.lineItem: [ {
+    position: 212
+  } ]
+  Storename;
+
+  @UI.identification: [ {
+    position: 220
+  } ]
+  @UI.lineItem: [ {
+    position: 220
+  } ]
+  @UI.selectionField: [ {position: 70 } ]
+  @Consumption.valueHelpDefinition: [{ entity: {name: 'ZR_VH_STATUS_DATASOURCE' , element: 'value' }, useForValidation: true}]
+  Status;
+
+  @UI.identification: [ {
+     position: 225
+   } ]
+  @UI.lineItem: [ {
+    position: 225
+  } ]
+  @UI.selectionField: [ {position: 85 } ]
+  @Consumption.valueHelpDefinition: [{ entity: {name: 'ZR_VH_ACCOUNTTYPE_DATASOURCE' , element: 'value' }, useForValidation: true}]
+  Accounttype;
+
+  @UI.identification: [ {
+    position: 230
+  } ]
+  @UI.lineItem: [ {
+    position: 230
+  } ]
+  @UI.selectionField: [ {position: 80 } ]
+  @Consumption.valueHelpDefinition: [{ entity: {name: 'ZR_VH_REYPE_DATASOURCE' , element: 'value' }, useForValidation: true}]
+  Receivablestype;
+
+  @EndUserText.label: '凭证编号'
+  @UI.identification: [ {
+    position: 240
+  } ]
+  @UI.lineItem: [ {
+    position: 240
+  } ]
+  @UI.selectionField: [ {position: 90 } ]
+  Accountingdocument;
+
+  @EndUserText.label: '会计年度'
+  @UI.identification: [ {
+    position: 250
+  } ]
+  @UI.lineItem: [ {
+    position: 250
+  } ]
+  Fiscalyear;
+
+  @EndUserText.label: '过账日期'
+  @UI.identification: [ {
+    position: 260
+  } ]
+  @UI.lineItem: [ {
+    position: 260
+  } ]
+  @UI.selectionField: [ {position: 100 } ]
+  Postdata;
+
+
+
+}

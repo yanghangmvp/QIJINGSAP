@@ -1,0 +1,4 @@
+@EndUserText.label: '制费成本结转'
+define service ZUI_QUERY_FI010 {
+  expose ZC_QUERY_FI010;
+}

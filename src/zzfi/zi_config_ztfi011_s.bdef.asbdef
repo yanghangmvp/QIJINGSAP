@@ -1,0 +1,83 @@
+managed with additional save implementation in class ZBP_I_CONFIG_ZTFI011_S unique;
+strict;
+with draft;
+define behavior for ZI_config_Ztfi011_S alias Ztfi011All
+draft table ZZTFI011_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _Ztfi011 { create ( features : instance ); with draft; }
+
+}
+
+define behavior for ZI_config_Ztfi011 alias Ztfi011 ##UNMAPPED_FIELD
+persistent table ZZTFI011
+draft table ZZTFI011_D
+lock dependent by _Ztfi011All
+authorization dependent by _Ztfi011All
+{
+  field ( mandatory : create )
+   GlaccountFrom,
+   GlaccountTo,
+   Zzitemtype,
+   Zzcode;
+
+  field ( readonly )
+   SingletonID,
+   ConfigDeprecationCode,
+   ConfigDeprecationCode_Critlty;
+
+  field ( readonly : update )
+   GlaccountFrom,
+   GlaccountTo,
+   Zzitemtype,
+   Zzcode;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : instance );
+
+  action ( features : instance ) Deprecate result [1] $self;
+  action ( features : instance ) Invalidate result [1] $self;
+  factory action ( features : instance ) Copy parameter ZD_config_Ztfi011 [1];
+
+  mapping for ZZTFI011
+  {
+    GlaccountFrom = GLACCOUNT_FROM;
+    GlaccountTo = GLACCOUNT_TO;
+    Zzitemtype = ZZITEMTYPE;
+    Zzcode = ZZCODE;
+    Zzitemname = ZZITEMNAME;
+    Zzcodename = ZZCODENAME;
+    Zzedit = ZZEDIT;
+    Zzmandatory = ZZMANDATORY;
+    Zzdefault = ZZDEFAULT;
+    ZzdefaultDec = ZZDEFAULT_DEC;
+    ConfigDeprecationCode = CONFIGDEPRECATIONCODE;
+  }
+
+  association _Ztfi011All { with draft; }
+
+}

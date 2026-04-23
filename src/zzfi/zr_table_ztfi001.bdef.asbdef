@@ -1,0 +1,146 @@
+managed implementation in class ZBP_R_TABLE_ZTFI001 unique;
+strict;
+with draft;
+extensible;
+define behavior for ZR_TABLE_ZTFI001 alias FI001
+persistent table zztfi001
+extensible
+draft table zztfi001_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+{
+  field ( mandatory : create )
+  Reference1indocumentheader,
+  Datasource;
+
+  field ( readonly )
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+  field ( readonly : update )
+  Reference1indocumentheader,
+  Datasource;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  action ( features : instance ) zztestpost result [1] $self;
+  action ( features : instance ) zzpost result [1] $self;
+  action ( features : instance ) zzrev parameter ZA_POP_FI001_REV result [0..1] $self;
+  action ( features : instance ) zzsend result [1] $self;
+  action ( features : instance ) zzcancel parameter ZA_POP_FI001_CANCEL result [0..1] $self;
+
+  association _FI002 { create ( features : instance ); }
+
+  mapping for zztfi001 corresponding extensible
+    {
+      Reference1indocumentheader    = reference1indocumentheader;
+      Datasource                    = datasource;
+      Originalreferencedocumenttype = originalreferencedocumenttype;
+      Businesstransactiontype       = businesstransactiontype;
+      CompanyCode                   = companycode;
+      Accountingdocumenttype        = accountingdocumenttype;
+      Fiscalperiod                  = fiscalperiod;
+      Postingdate                   = postingdate;
+      Documentdate                  = documentdate;
+      Transactioncurrency           = transactioncurrency;
+      Exchangerate                  = exchangerate;
+      Accountingdoccreatedbyuser    = accountingdoccreatedbyuser;
+      Accountingdocumentheadertext  = accountingdocumentheadertext;
+      Accountingdocument            = accountingdocument;
+      FiscalYear                    = fiscalyear;
+      Virtualnum                    = virtualnum;
+      Zztszt                        = zztszt;
+      Flag                          = flag;
+      Msgty                         = msgty;
+      Msgtx                         = msgtx;
+      CreatedBy                     = created_by;
+      CreatedAt                     = created_at;
+      LastChangedBy                 = last_changed_by;
+      LastChangedAt                 = last_changed_at;
+      LocalLastChangedAt            = local_last_changed_at;
+    }
+}
+
+define behavior for ZR_TABLE_ZTFI002 alias FI002
+persistent table zztfi002
+extensible
+draft table zztfi002_d
+lock dependent by _FI001
+authorization dependent by _FI001
+{
+  field ( mandatory : create )
+  Reference1indocumentheader,
+  Datasource,
+  Accountingdocumentitem;
+
+  field ( readonly )
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+  field ( readonly : update )
+  Reference1indocumentheader,
+  Datasource,
+  Accountingdocumentitem;
+
+  update;
+  delete;
+
+  association _FI001;
+
+  mapping for zztfi002 corresponding extensible
+    {
+      Reference1indocumentheader    = reference1indocumentheader;
+      Datasource                    = datasource;
+      Accountingdocumentitem        = accountingdocumentitem;
+      Glaccount                     = glaccount;
+      Amountintransactioncurrency   = amountintransactioncurrency;
+      Amountincompanycodecurrency   = amountincompanycodecurrency;
+      Debitcreditcode               = debitcreditcode;
+      Documentitemtext              = documentitemtext;
+      Masterfixedasset              = masterfixedasset;
+      Fixedasset                    = fixedasset;
+      Assettransactiontype          = assettransactiontype;
+      Reasoncode                    = reasoncode;
+      Assignmentreference           = assignmentreference;
+      Profitcenter                  = profitcenter;
+      Costcenter                    = costcenter;
+      Functionalarea                = functionalarea;
+      Wbselement                    = wbselement;
+      Customer                      = customer;
+      Specialglcode                 = specialglcode;
+      Altvrecnclnaccts              = altvrecnclnaccts;
+      Creditcontrolarea             = creditcontrolarea;
+      Vendor                        = vendor;
+      Duecalculationbasedate        = duecalculationbasedate;
+      Paymentreference              = paymentreference;
+      Tradingpartner                = tradingpartner;
+      Zz005                         = zz005;
+      Salesorder                    = salesorder;
+      Salesorderitem                = salesorderitem;
+      Plant                         = plant;
+      Material                      = material;
+      Reference3idbybusinesspartner = reference3idbybusinesspartner;
+      CreatedBy                     = created_by;
+      CreatedAt                     = created_at;
+      LastChangedBy                 = last_changed_by;
+      LastChangedAt                 = last_changed_at;
+      LocalLastChangedAt            = local_last_changed_at;
+    }
+
+}

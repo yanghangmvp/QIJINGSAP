@@ -1,0 +1,150 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Ztfi011',
+    typeNamePlural: 'Ztfi011s',
+    title: {
+      type: #STANDARD,
+      label: '综合管理维度项目配置表',
+      value: 'GlaccountFrom'
+    }
+  }
+}
+annotate view ZI_config_Ztfi011 with
+{
+  @UI.hidden: true
+  ConfigDeprecationCode_Critlty;
+
+  @UI.identification: [ {
+    position: 1
+  } ]
+  @UI.lineItem: [ {
+    position: 1
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_config_Ztfi011',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: '综合管理维度项目配置表',
+    position: 1
+  } ]
+  @EndUserText.label: '总账科目从'
+  GlaccountFrom;
+
+  @UI.identification: [ {
+    position: 2
+  } ]
+  @UI.lineItem: [ {
+    position: 2
+  } ]
+  @EndUserText.label: '总账科目至'
+  GlaccountTo;
+
+  @UI.identification: [ {
+    position: 3
+  } ]
+  @UI.lineItem: [ {
+    position: 3
+  } ]
+  Zzitemtype;
+
+  @UI.identification: [ {
+    position: 4
+  } ]
+  @UI.lineItem: [ {
+    position: 4
+  } ]
+  Zzcode;
+
+  @UI.identification: [ {
+    position: 5 ,
+    label: '综合管理项目名称'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 ,
+    label: '综合管理项目名称'
+  } ]
+  Zzitemname;
+
+  @UI.identification: [ {
+    position: 6 ,
+    label: '核算字段编码描述'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 ,
+    label: '核算字段编码描述'
+  } ]
+  Zzcodename;
+
+  @UI.identification: [ {
+    position: 7
+  } ]
+  @UI.lineItem: [ {
+    position: 7
+  } ]
+  @EndUserText.label: '是否可编辑'
+  Zzedit;
+
+  @UI.identification: [ {
+    position: 8
+  } ]
+  @UI.lineItem: [ {
+    position: 8
+  } ]
+  @EndUserText.label: '是否必输'
+  Zzmandatory;
+
+  @UI.identification: [ {
+    position: 9 ,
+    label: '默认属性值-文本'
+  } ]
+  @UI.lineItem: [ {
+    position: 9 ,
+    label: '默认属性值-文本'
+  } ]
+  Zzdefault;
+
+  @UI.identification: [ {
+    position: 10 ,
+    label: '默认属性值-金额'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 ,
+    label: '默认属性值-金额'
+  } ]
+  ZzdefaultDec;
+
+  //  @UI.identification: [ {
+  //    position: 11 ,
+  //    criticality: 'ConfigDeprecationCode_Critlty'
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Deprecate',
+  //    label: '不赞成使用'
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Invalidate',
+  //    label: '无效'
+  //  } ]
+  //  @UI.textArrangement: #TEXT_ONLY
+  //  @UI.lineItem: [ {
+  //    position: 11 ,
+  //    criticality: 'ConfigDeprecationCode_Critlty'
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Deprecate',
+  //    label: '不赞成使用所选条目',
+  //    invocationGrouping: #CHANGE_SET
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Invalidate',
+  //    label: '使所选条目无效',
+  //    invocationGrouping: #CHANGE_SET
+  //  } ]
+  @UI.hidden: true
+  ConfigDeprecationCode;
+}

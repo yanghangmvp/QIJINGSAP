@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "采购价格主数据推送"
+  },
+  "ui5AppDetails": {
+    "appId": "zzquerymm003"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_33B6A2BD2EF8E102EA275FED0965AEB75230F29A_TM",
+    "semanticObject": "zzquerymm003",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_33B6A2BD2EF8E102EA275FED0965AEB75230F29A_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "采购价格主数据推送",
+        "subtitle": "采购价格主数据推送"
+      }
+    }
+  ]
+}

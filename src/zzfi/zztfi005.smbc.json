@@ -1,0 +1,39 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "维护 分配的现金流量码",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZUI_TABLE_ZTFI005_O4",
+    "serviceName": "ZUI_TABLE_ZTFI005_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "Ztfi005All",
+    "name": "分配的现金流量码",
+    "transportObject": "",
+    "configurationGroup": "",
+    "skipRootEntity": true,
+    "enableFileUpload": false
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "Ztfi005All",
+        "variantManagement": "control"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "Ztfi005",
+        "selectAll": true,
+        "rowCountMode": "auto",
+        "frozenColumnCount": 4,
+        "creationModeName": "inlineCreationRows",
+        "createAtEnd": true,
+        "widthIncludingColumnHeader": true
+      }
+    ]
+  }
+}

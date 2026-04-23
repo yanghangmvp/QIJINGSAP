@@ -1,0 +1,106 @@
+managed implementation in class ZBP_I_ZTFI002_S unique;
+strict;
+with draft;
+define behavior for ZI_CONFIG_Ztfi002_S alias Ztfi002All
+draft table zztfi002_d_s
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master ( global )
+{
+  field ( readonly )
+  SingletonID;
+
+  field ( notrigger )
+  SingletonID,
+  LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _Ztfi002 { create ( features : instance ); with draft; }
+
+}
+
+define behavior for ZI_CONFIG_Ztfi002 alias Ztfi002 ##UNMAPPED_FIELD
+persistent table zztfi002
+draft table zztfi002_cd
+etag master LocalLastChangedAt
+lock dependent by _Ztfi002All
+authorization dependent by _Ztfi002All
+{
+  field ( mandatory : create )
+  Reference1indocumentheader,
+  Datasource,
+  Accountingdocumentitem;
+
+  field ( readonly )
+  SingletonID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+  field ( readonly : update )
+  Reference1indocumentheader,
+  Datasource,
+  Accountingdocumentitem;
+
+  field ( notrigger )
+  SingletonID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+
+  update ( features : global );
+  delete ( features : global );
+
+  mapping for zztfi002
+    {
+      Reference1indocumentheader  = REFERENCE1INDOCUMENTHEADER;
+      Datasource                  = DATASOURCE;
+      Accountingdocumentitem      = ACCOUNTINGDOCUMENTITEM;
+      Glaccount                   = GLACCOUNT;
+      Amountintransactioncurrency = AMOUNTINTRANSACTIONCURRENCY;
+      Amountincompanycodecurrency = AMOUNTINCOMPANYCODECURRENCY;
+      Debitcreditcode             = DEBITCREDITCODE;
+      Documentitemtext            = DOCUMENTITEMTEXT;
+      Masterfixedasset            = MASTERFIXEDASSET;
+      Fixedasset                  = FIXEDASSET;
+      Assettransactiontype        = ASSETTRANSACTIONTYPE;
+      Reasoncode                  = REASONCODE;
+      Assignmentreference         = ASSIGNMENTREFERENCE;
+      Profitcenter                = PROFITCENTER;
+      Costcenter                  = COSTCENTER;
+      Functionalarea              = FUNCTIONALAREA;
+      Wbselement                  = WBSELEMENT;
+      Customer                    = CUSTOMER;
+      Specialglcode               = SPECIALGLCODE;
+      Altvrecnclnaccts            = ALTVRECNCLNACCTS;
+      Creditcontrolarea           = CREDITCONTROLAREA;
+      Vendor                      = VENDOR;
+      Duecalculationbasedate      = DUECALCULATIONBASEDATE;
+      Paymentreference            = PAYMENTREFERENCE;
+      Tradingpartner              = TRADINGPARTNER;
+      Zz005                       = ZZ005;
+      CreatedBy                   = CREATED_BY;
+      CreatedAt                   = CREATED_AT;
+      LastChangedBy               = LAST_CHANGED_BY;
+      LastChangedAt               = LAST_CHANGED_AT;
+      LocalLastChangedAt          = LOCAL_LAST_CHANGED_AT;
+    }
+
+  association _Ztfi002All { with draft; }
+
+}

@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "采购收退货明细下发"
+  },
+  "ui5AppDetails": {
+    "appId": "zzquerymm004"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_73151C08884B87FFF1C13B1EA3D8A9C3CCE0AC03_TM",
+    "semanticObject": "zzquerymm004",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_73151C08884B87FFF1C13B1EA3D8A9C3CCE0AC03_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "采购收退货明细下发",
+        "subtitle": "采购收退货明细下发"
+      }
+    }
+  ]
+}

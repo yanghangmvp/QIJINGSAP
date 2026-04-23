@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "制费成本分摊"
+  },
+  "ui5AppDetails": {
+    "appId": "zzqueryfi011"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_22E5FD1BC2F4E95E36379933FECDE035C43CADCE_TM",
+    "semanticObject": "zzqueryfi011",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_22E5FD1BC2F4E95E36379933FECDE035C43CADCE_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "制费成本分摊",
+        "subtitle": "制费成本分摊"
+      }
+    }
+  ]
+}

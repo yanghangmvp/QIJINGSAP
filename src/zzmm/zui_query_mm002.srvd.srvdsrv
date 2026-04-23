@@ -1,0 +1,4 @@
+@EndUserText.label: '物料主数据'
+define service ZUI_QUERY_MM002 {
+  expose zc_query_mm002 as mm002;
+}

@@ -1,0 +1,48 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'mm005',
+    typeNamePlural: 'mm005s',
+    title: {
+      type: #STANDARD,
+      label: '采购订单配置表',
+      value: 'Conftype'
+    }
+  }
+}
+annotate view ZI_CONFIG_Ztmm005 with
+{
+
+  @UI.facet: [ {
+    id: 'ZI_CONFIG_Ztmm005',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: '采购订单配置表',
+    position: 1
+  } ]
+
+  @UI.identification: [ { position: 1 } ]
+  @UI.lineItem: [ { position: 1 } ]
+  @EndUserText.label          : '配置类型'
+  Conftype;
+
+  @UI.identification: [ { position: 2 } ]
+  @UI.lineItem: [ { position: 2  } ]
+  @EndUserText.label          : '配置类型描述'
+  Confdesc;
+
+  @UI.identification: [ { position: 3 } ]
+  @UI.lineItem: [ { position: 3 } ]
+  @EndUserText.label          : '关联系统'
+  Relsystem;
+
+  @UI.identification: [ {  position: 4 } ]
+  @UI.lineItem: [ { position: 4 } ]
+  @EndUserText.label          : '外围系统传值'
+  Transvalue;
+
+  @UI.identification: [ {  position: 5 } ]
+  @UI.lineItem: [ { position: 5 } ]
+  @EndUserText.label          : 'SAP对应值'
+  Sapvalue;
+}

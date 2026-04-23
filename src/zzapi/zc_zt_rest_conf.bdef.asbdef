@@ -1,0 +1,29 @@
+projection;
+strict;
+use side effects;
+use draft;
+define behavior for ZC_ZT_REST_CONF
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action Refresh;
+
+  use association _append { create; }
+}
+
+define behavior for ZC_ZT_REST_APPEND
+{
+  use update;
+  use delete;
+
+  use association _conf;
+}

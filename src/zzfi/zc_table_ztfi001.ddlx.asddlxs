@@ -1,0 +1,179 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: '会计凭证审核',
+    typeNamePlural: '会计凭证审核',
+    title: { type: #STANDARD, value: 'Reference1indocumentheader' },
+    description: { value: 'Reference1indocumentheader' }
+   }
+ }
+annotate view ZC_TABLE_ZTFI001 with
+{
+
+  @UI.facet: [ {
+                    label: '常规信息',
+                    id: 'GeneralInfo',
+                    purpose: #STANDARD,
+                    position: 10 ,
+                    type: #IDENTIFICATION_REFERENCE
+               } ,
+               {    id: 'Append',
+                    type:#LINEITEM_REFERENCE,
+                    targetElement: '_FI002',
+                    label: '行项目数据',
+                    position: 20
+                } ]
+
+
+  @UI.identification: [ { position: 10  },
+//                        { position: 01 ,type: #FOR_ACTION, dataAction: 'zztestpost', label: '模拟过账'},
+                        { position: 02 ,type: #FOR_ACTION, dataAction: 'zzpost', label: '过账'} ,
+                        { position: 03 ,type: #FOR_ACTION, dataAction: 'zzsend', label: '推送DMS'},
+                        { position: 04 ,type: #FOR_ACTION, dataAction: 'zzcancel', label: '取消预制'},
+                        { position: 05 ,type: #FOR_ACTION, dataAction: 'zzrev', label: '冲销'}
+                      ]
+  @UI.lineItem: [ { position: 10  } ,
+//                  { position: 01 ,type: #FOR_ACTION, dataAction: 'zztestpost', label: '模拟过账'},
+                  { position: 02 ,type: #FOR_ACTION, dataAction: 'zzpost', invocationGrouping: #CHANGE_SET, label: '过账'} ,
+                  { position: 03 ,type: #FOR_ACTION, dataAction: 'zzsend', invocationGrouping: #CHANGE_SET, label: '推送DMS'} ,
+                  { position: 04 ,type: #FOR_ACTION, dataAction: 'zzcancel', invocationGrouping: #CHANGE_SET, label: '取消预制'},
+                  { position: 05 ,type: #FOR_ACTION, dataAction: 'zzrev', label: '冲销'}
+                ]
+  @UI.selectionField: [ { position: 10 } ]
+  @EndUserText.label            : '业务单据号'
+  Reference1indocumentheader;
+
+  @UI.identification: [ { position: 20 } ]
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.selectionField: [ { position: 20 } ]
+  @EndUserText.label            : '数据来源'
+  @Consumption.filter: {  selectionType: #SINGLE , mandatory:true }
+  Datasource;
+
+  @EndUserText.label: '参考类型'
+  @UI.identification: [ { position: 30 } ]
+  @UI.lineItem: [ {  position: 30 } ]
+  Originalreferencedocumenttype;
+
+  @EndUserText.label: '业务交易类型'
+  @UI.identification: [ {  position: 40 } ]
+  @UI.lineItem: [ { position: 40 } ]
+  Businesstransactiontype;
+
+  @EndUserText.label: '公司代码'
+  @UI.identification: [ { position: 50 } ]
+  @UI.lineItem: [ { position: 50 } ]
+  @UI.selectionField: [ { position: 50 } ]
+  @Consumption.valueHelpDefinition: [{ entity: {name: 'I_CompanyCodeVH' , element: 'CompanyCode' } }]
+  CompanyCode;
+
+  @EndUserText.label: '凭证类型'
+  @UI.identification: [ {  position: 60 } ]
+  @UI.lineItem: [ {  position: 60 } ]
+  @UI.selectionField: [ { position: 60 } ]
+  Accountingdocumenttype;
+
+  @EndUserText.label: '期间'
+  @UI.identification: [ {  position: 65 } ]
+  @UI.lineItem: [ {  position: 65 } ]
+  @UI.selectionField: [ { position: 65 } ]
+  Fiscalperiod;
+
+  @EndUserText.label: '过账日期'
+  @UI.identification: [ {  position: 70 } ]
+  @UI.lineItem: [ { position: 70  } ]
+  @UI.selectionField: [ { position: 70 } ]
+  Postingdate;
+
+  @EndUserText.label: '凭证日期'
+  @UI.identification: [ { position: 80  } ]
+  @UI.lineItem: [ {  position: 80  } ]
+
+  Documentdate;
+
+  @EndUserText.label: '货币码'
+  @UI.identification: [ { position: 90  } ]
+  @UI.lineItem: [ {  position: 90  } ]
+  Transactioncurrency;
+
+  @EndUserText.label: '汇率'
+  @UI.identification: [ { position: 100  } ]
+  @UI.lineItem: [ {  position: 100  } ]
+  Exchangerate;
+
+  @EndUserText.label: '用户名'
+  @UI.identification: [ { position: 110  } ]
+  @UI.lineItem: [ {  position: 110  } ]
+  Accountingdoccreatedbyuser;
+
+  @EndUserText.label: '凭证抬头文本'
+  @UI.identification: [ { position: 120  } ]
+  @UI.lineItem: [ {  position: 120  } ]
+  Accountingdocumentheadertext;
+
+  @EndUserText.label: ' 凭证号'
+  @UI.identification: [ { position: 130 } ]
+  @UI.lineItem: [ { position: 130 } ]
+  @Consumption.semanticObject: 'AccountingDocument'
+  //  @Consumption.semanticObjectMapping:{
+  //   //   element : 'Accountingdocument',
+  //      additionalBinding :[
+  //      { localElement   : 'Fiscalyear', element  : 'Fiscalyear'    } ,
+  //      { localElement   : 'Companycode', element  : 'Companycode'    }
+  //      ]
+  //   }
+  Accountingdocument;
+
+  @EndUserText.label: '凭证年度'
+  @UI.identification: [ {  position: 140 } ]
+  @UI.lineItem: [ {  position: 140 } ]
+  FiscalYear;
+
+  @EndUserText.label: '虚拟单号'
+  @UI.identification: [ {  position: 145 } ]
+  @UI.lineItem: [ {  position: 145 } ]
+  Virtualnum;
+
+  @EndUserText.label: '是否已处理'
+  @UI.identification: [ {  position: 150 } ]
+  @UI.lineItem: [ {  position: 150 } ]
+  @UI.selectionField: [ { position: 150 } ]
+  @Consumption.filter: {  defaultValue: ' ' }
+  Flag;
+
+  @EndUserText.label: '推送状态'
+  @UI.identification: [ { position: 155} ]
+  @UI.lineItem: [ { position: 155  } ]
+  Zztszt;
+
+  @EndUserText.label: '执行状态'
+  @UI.identification: [ { position: 160 } ]
+  @UI.lineItem: [ { position: 160  } ]
+  Msgty;
+
+  @EndUserText.label: '执行消息'
+  @UI.identification: [ {  position: 170 } ]
+  @UI.lineItem: [ { position: 170 } ]
+  Msgtx;
+
+  @UI.identification: [ {  position: 180 } ]
+  @UI.lineItem: [ { position: 180 } ]
+  CreatedBy;
+
+  @UI.identification: [ {  position: 190 } ]
+  @UI.lineItem: [ { position: 190 } ]
+  CreatedAt;
+
+  @UI.identification: [ {  position: 200 } ]
+  @UI.lineItem: [ { position: 200 } ]
+  LastChangedBy;
+
+  @UI.identification: [ {  position: 210 } ]
+  @UI.lineItem: [ { position: 210 } ]
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+
+}

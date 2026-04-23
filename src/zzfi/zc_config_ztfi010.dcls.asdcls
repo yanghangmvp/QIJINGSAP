@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZC_CONFIG_ZTFI010'
+@MappingRole: true
+define role ZC_CONFIG_ZTFI010 {
+  grant select on ZC_CONFIG_ZTFI010
+  where INHERITING CONDITIONS FROM ENTITY ZR_CONFIG_ZTFI010 REPLACING { ROOT WITH _BaseEntity };
+}

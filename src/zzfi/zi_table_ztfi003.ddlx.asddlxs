@@ -1,0 +1,48 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Ztfi003',
+    typeNamePlural: 'Ztfi003s',
+    title: {
+      type: #STANDARD,
+      label: '备选统驭科目配置表',
+      value: 'ZzkhontTy'
+    }
+  }
+}
+annotate view ZI_TABLE_Ztfi003 with
+{
+  @UI.identification: [ {
+    position: 1
+  } ]
+  @UI.lineItem: [ {
+    position: 1
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TABLE_Ztfi003',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: '备选统驭科目配置表',
+    position: 1
+  } ]
+  @EndUserText.label            : '统驭科目'
+  ZzkhontTy;
+
+  @UI.identification: [ {
+    position: 2
+  } ]
+  @UI.lineItem: [ {
+    position: 2
+  } ]
+  @EndUserText.label            : '备选统驭科目'
+  ZzkhontBx;
+
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  @UI.lineItem: [ {
+    position: 3 
+  } ]
+  @EndUserText.label            : '标识'
+  Krzky;
+}

@@ -1,0 +1,177 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: '整车处理平台',
+    typeNamePlural: '整车处理平台',
+    title: { type: #STANDARD, value: 'Purchaseorderbycustomer' },
+    description: { value: 'Purchaseorderbycustomer' }
+   }
+ }
+annotate view ZC_TABLE_ZTSD002 with
+{
+
+  @UI.facet: [ {
+    label: '常规信息',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+
+  @EndUserText.label: '客户参考'
+  @UI.identification: [ {
+    position: 10
+  } ]
+  @UI.lineItem: [ {
+    position: 10
+  } ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+  Purchaseorderbycustomer;
+
+  @UI.identification: [ {
+    position: 20
+  } ]
+  @UI.lineItem: [ {
+    position: 20
+  } ]
+  @EndUserText.label: '销售订单项目'
+  Salesdocumentitem;
+
+  @EndUserText.label: '项目类型'
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+  Salesdocumentitemcategory;
+
+  @EndUserText.label: '物料编码'
+  @UI.identification: [ {
+    position: 40
+  } ]
+  @UI.lineItem: [ {
+    position: 40
+  } ]
+  Product;
+
+  @EndUserText.label: '订单数量'
+  @UI.identification: [ {
+    position: 50
+  } ]
+  @UI.lineItem: [ {
+    position: 50
+  } ]
+  Orderquantity;
+
+  @EndUserText.label: '单位'
+  @UI.identification: [ {
+    position: 60
+  } ]
+  @UI.lineItem: [ {
+    position: 60
+  } ]
+  Orderquantityunit;
+
+  @EndUserText.label: '批次'
+  @UI.identification: [ {
+    position: 70
+  } ]
+  @UI.lineItem: [ {
+    position: 70
+  } ]
+  Batch;
+
+  @EndUserText.label: '工厂'
+  @UI.identification: [ {
+    position: 80
+  } ]
+  @UI.lineItem: [ {
+    position: 80
+  } ]
+  Plant;
+
+  @EndUserText.label: '序列号'
+  @UI.identification: [ {
+    position: 90
+  } ]
+  @UI.lineItem: [ {
+    position: 90
+  } ]
+  Serialnumber;
+
+  @EndUserText.label: '存储地点'
+  @UI.identification: [ {
+    position: 100
+  } ]
+  @UI.lineItem: [ {
+    position: 100
+  } ]
+  Storagelocation;
+
+  @EndUserText.label: '行备注'
+  @UI.identification: [ {
+    position: 110
+  } ]
+  @UI.lineItem: [ {
+    position: 110
+  } ]
+  Zbeizuitem;
+
+  @EndUserText.label: '前端平台单号'
+  @UI.identification: [ {
+    position: 120
+  } ]
+  @UI.lineItem: [ {
+    position: 120
+  } ]
+  Zplatformcode;
+
+  @EndUserText.label: 'DMS订单类型'
+  @UI.identification: [ {
+    position: 130
+  } ]
+  @UI.lineItem: [ {
+    position: 130
+  } ]
+  Zdmssotype;
+
+  @EndUserText.label: '条件类型'
+  @UI.identification: [ {
+    position: 140
+  } ]
+  @UI.lineItem: [ {
+    position: 140
+  } ]
+  Conditiontype;
+
+  @EndUserText.label: '条件金额(单价）'
+  @UI.identification: [ {
+    position: 150
+  } ]
+  @UI.lineItem: [ {
+    position: 150
+  } ]
+  Conditionratevalue;
+
+  @EndUserText.label: '定价单位'
+  @UI.identification: [ {
+    position: 160
+  } ]
+  @UI.lineItem: [ {
+    position: 160
+  } ]
+  Conditionquantity;
+
+  @EndUserText.label: '条件值'
+  @UI.identification: [ {
+    position: 170
+  } ]
+  @UI.lineItem: [ {
+    position: 170
+  } ]
+  Conditionamount;
+
+}

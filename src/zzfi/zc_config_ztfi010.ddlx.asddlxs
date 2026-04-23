@@ -1,0 +1,551 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'UUID'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'UUID'
+annotate view ZC_CONFIG_ZTFI010 with
+{
+  @UI.facet: [ {
+    label: '常规信息',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  //  @UI.identification: [ {
+  //    position: 10
+  //  } ]
+  //  @UI.lineItem: [ {
+  //    position: 10
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 10
+  //  } ]
+  @UI.hidden: true
+  UUID;
+
+  @UI.identification: [ { position: 20 },
+                        { type : #FOR_ACTION, dataAction: 'zsave', label: '存表', invocationGrouping: #CHANGE_SET } ]
+  @UI.lineItem: [ { position: 20 },
+                  { type : #FOR_ACTION, dataAction: 'zsave', label: '存表', invocationGrouping: #CHANGE_SET } ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  Reference1indocumentheader;
+
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+  Datasource;
+
+  @EndUserText.label: '参考过程'
+  @UI.identification: [ {
+    position: 32 ,
+    label: '参考过程'
+  } ]
+  @UI.lineItem: [ {
+    position: 32 ,
+    label: '参考过程'
+  } ]
+  @UI.selectionField: [ {
+    position: 32
+  } ]
+  Originalreferencedocumenttype;
+
+  @EndUserText.label: '业务交易类型'
+  @UI.identification: [ {
+    position: 34 ,
+    label: '业务交易类型'
+  } ]
+  @UI.lineItem: [ {
+    position: 34 ,
+    label: '业务交易类型'
+  } ]
+  @UI.selectionField: [ {
+    position: 34
+  } ]
+  Businesstransactiontype;
+
+  @EndUserText.label: '公司代码'
+  @UI.identification: [ {
+    position: 40 ,
+    label: '公司代码'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 ,
+    label: '公司代码'
+  } ]
+  @UI.selectionField: [ {
+    position: 40
+  } ]
+  Companycode;
+
+  @EndUserText.label: '凭证类型'
+  @UI.identification: [ {
+    position: 50 ,
+    label: '凭证类型'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 ,
+    label: '凭证类型'
+  } ]
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  Accountingdocumenttype;
+  
+  @UI.identification: [ {
+    position: 55
+  } ]
+  @UI.lineItem: [ {
+    position: 55
+  } ]
+  @UI.selectionField: [ {
+    position: 55
+  } ]
+  Fiscalperiod;
+
+  @EndUserText.label: '过账日期'
+  @UI.identification: [ {
+    position: 60 ,
+    label: '过账日期'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 ,
+    label: '过账日期'
+  } ]
+  @UI.selectionField: [ {
+    position: 60
+  } ]
+  Postingdate;
+
+  @EndUserText.label: '凭证日期'
+  @UI.identification: [ {
+    position: 70 ,
+    label: '凭证日期'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 ,
+    label: '凭证日期'
+  } ]
+  @UI.selectionField: [ {
+    position: 70
+  } ]
+  Documentdate;
+
+  @EndUserText.label: '交易币别'
+  @UI.identification: [ {
+    position: 80 ,
+    label: '交易币别'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 ,
+    label: '交易币别'
+  } ]
+  @UI.selectionField: [ {
+    position: 80
+  } ]
+  Transactioncurrency;
+
+  @EndUserText.label: '汇率'
+  @UI.identification: [ {
+    position: 90 ,
+    label: '汇率'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 ,
+    label: '汇率'
+  } ]
+  @UI.selectionField: [ {
+    position: 90
+  } ]
+  Exchangerate;
+
+  @EndUserText.label: '凭证抬头文本'
+  @UI.identification: [ {
+    position: 100 ,
+    label: '凭证抬头文本'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 ,
+    label: '凭证抬头文本'
+  } ]
+  @UI.selectionField: [ {
+    position: 100
+  } ]
+  Accountingdocumentheadertext;
+
+  @EndUserText.label: '行项目'
+  @UI.identification: [ {
+    position: 110 ,
+    label: '行项目'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 ,
+    label: '行项目'
+  } ]
+  @UI.selectionField: [ {
+    position: 110
+  } ]
+  Accountingdocumentitem;
+
+  @EndUserText.label: '总账科目'
+  @UI.identification: [ {
+    position: 120 ,
+    label: '总账科目'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 ,
+    label: '总账科目'
+  } ]
+  @UI.selectionField: [ {
+    position: 120
+  } ]
+  Glaccount;
+
+  @EndUserText.label: '交易币金额'
+  @UI.identification: [ {
+    position: 130 ,
+    label: '交易币金额'
+  } ]
+  @UI.lineItem: [ {
+    position: 130 ,
+    label: '交易币金额'
+  } ]
+  @UI.selectionField: [ {
+    position: 130
+  } ]
+  Amountintransactioncurrency;
+
+  @EndUserText.label: '本位币金额'
+  @UI.identification: [ {
+    position: 140 ,
+    label: '本位币金额'
+  } ]
+  @UI.lineItem: [ {
+    position: 140 ,
+    label: '本位币金额'
+  } ]
+  @UI.selectionField: [ {
+    position: 140
+  } ]
+  Amountincompanycodecurrency;
+
+  @EndUserText.label: '借S/贷H'
+  @UI.identification: [ {
+    position: 150 ,
+    label: '借S/贷H'
+  } ]
+  @UI.lineItem: [ {
+    position: 150 ,
+    label: '借S/贷H'
+  } ]
+  @UI.selectionField: [ {
+    position: 150
+  } ]
+  Debitcreditcode;
+
+  @EndUserText.label: '行项目文本'
+  @UI.identification: [ {
+    position: 160 ,
+    label: '行项目文本'
+  } ]
+  @UI.lineItem: [ {
+    position: 160 ,
+    label: '行项目文本'
+  } ]
+  @UI.selectionField: [ {
+    position: 160
+  } ]
+  Documentitemtext;
+
+  @EndUserText.label: '原因代码'
+  @UI.identification: [ {
+    position: 170 ,
+    label: '原因代码'
+  } ]
+  @UI.lineItem: [ {
+    position: 170 ,
+    label: '原因代码'
+  } ]
+  @UI.selectionField: [ {
+    position: 170
+  } ]
+  Reasoncode;
+
+  @EndUserText.label: '分配'
+  @UI.identification: [ {
+    position: 180 ,
+    label: '分配'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 ,
+    label: '分配'
+  } ]
+  @UI.selectionField: [ {
+    position: 180
+  } ]
+  Assignmentreference;
+  
+  @EndUserText.label: '替代科目'
+  @UI.identification: [ {
+    position: 181 ,
+    label: '替代科目'
+  } ]
+  @UI.lineItem: [ {
+    position: 181 ,
+    label: '替代科目'
+  } ]
+  @UI.selectionField: [ {
+    position: 181
+  } ]
+  Altvrecnclnaccts;
+
+  @EndUserText.label: '成本中心'
+  @UI.identification: [ {
+    position: 190 ,
+    label: '成本中心'
+  } ]
+  @UI.lineItem: [ {
+    position: 190 ,
+    label: '成本中心'
+  } ]
+  @UI.selectionField: [ {
+    position: 190
+  } ]
+  Costcenter;
+
+  @EndUserText.label: '客户'
+  @UI.identification: [ {
+    position: 200 ,
+    label: '客户'
+  } ]
+  @UI.lineItem: [ {
+    position: 200 ,
+    label: '客户'
+  } ]
+  @UI.selectionField: [ {
+    position: 200
+  } ]
+  Customer;
+
+  @EndUserText.label: '付款起算日期'
+  @UI.identification: [ {
+    position: 210 ,
+    label: '付款起算日期'
+  } ]
+  @UI.lineItem: [ {
+    position: 210 ,
+    label: '付款起算日期'
+  } ]
+  @UI.selectionField: [ {
+    position: 210
+  } ]
+  Duecalculationbasedate;
+
+  @EndUserText.label: '功能范围'
+  @UI.identification: [ {
+    position: 220 ,
+    label: '功能范围'
+  } ]
+  @UI.lineItem: [ {
+    position: 220 ,
+    label: '功能范围'
+  } ]
+  @UI.selectionField: [ {
+    position: 220
+  } ]
+  Functionalarea;
+
+  @EndUserText.label: '利润中心'
+  @UI.identification: [ {
+    position: 230 ,
+    label: '利润中心'
+  } ]
+  @UI.lineItem: [ {
+    position: 230 ,
+    label: '利润中心'
+  } ]
+  @UI.selectionField: [ {
+    position: 230
+  } ]
+  Profitcenter;
+
+  @EndUserText.label: '贸易伙伴'
+  @UI.identification: [ {
+    position: 250 ,
+    label: '贸易伙伴'
+  } ]
+  @UI.lineItem: [ {
+    position: 250 ,
+    label: '贸易伙伴'
+  } ]
+  @UI.selectionField: [ {
+    position: 250
+  } ]
+  Tradingpartner;
+  
+  @EndUserText.label: '物料'
+  @UI.identification: [ {
+    position: 251 ,
+    label: '物料'
+  } ]
+  @UI.lineItem: [ {
+    position: 251 ,
+    label: '物料'
+  } ]
+  @UI.selectionField: [ {
+    position: 251
+  } ]
+  Material;
+  
+  @EndUserText.label: '销售订单'
+  @UI.identification: [ {
+    position: 252 ,
+    label: '销售订单'
+  } ]
+  @UI.lineItem: [ {
+    position: 252 ,
+    label: '销售订单'
+  } ]
+  @UI.selectionField: [ {
+    position: 252
+  } ]
+  Salesorder;
+  
+  @EndUserText.label: '销售订单行项目'
+  @UI.identification: [ {
+    position: 253 ,
+    label: '销售订单行项目'
+  } ]
+  @UI.lineItem: [ {
+    position: 253 ,
+    label: '销售订单行项目'
+  } ]
+  @UI.selectionField: [ {
+    position: 253
+  } ]
+  Salesorderitem;
+
+  @EndUserText.label: '供应商'
+  @UI.identification: [ {
+    position: 260 ,
+    label: '供应商'
+  } ]
+  @UI.lineItem: [ {
+    position: 260 ,
+    label: '供应商'
+  } ]
+  @UI.selectionField: [ {
+    position: 260
+  } ]
+  Vendor;
+
+  @EndUserText.label: 'WBS要素'
+  @UI.identification: [ {
+    position: 270 ,
+    label: 'WBS要素'
+  } ]
+  @UI.lineItem: [ {
+    position: 270 ,
+    label: 'WBS要素'
+  } ]
+  @UI.selectionField: [ {
+    position: 270
+  } ]
+  Wbselement;
+
+  @EndUserText.label: '车型'
+  @UI.identification: [ {
+    position: 280 ,
+    label: '车型'
+  } ]
+  @UI.lineItem: [ {
+    position: 280 ,
+    label: '车型'
+  } ]
+  @UI.selectionField: [ {
+    position: 280
+  } ]
+  Zz005;
+
+  @UI.identification: [ {
+    position: 290
+  } ]
+  @UI.lineItem: [ {
+    position: 290
+  } ]
+  @UI.selectionField: [ {
+    position: 290
+  } ]
+  CreatedBy;
+
+  @UI.identification: [ {
+    position: 300
+  } ]
+  @UI.lineItem: [ {
+    position: 300
+  } ]
+  @UI.selectionField: [ {
+    position: 300
+  } ]
+  CreatedAt;
+
+  @UI.identification: [ {
+    position: 310
+  } ]
+  @UI.lineItem: [ {
+    position: 310
+  } ]
+  @UI.selectionField: [ {
+    position: 310
+  } ]
+  LastChangedBy;
+
+  @UI.identification: [ {
+    position: 320
+  } ]
+  @UI.lineItem: [ {
+    position: 320
+  } ]
+  @UI.selectionField: [ {
+    position: 320
+  } ]
+  LastChangedAt;
+
+  @UI.identification: [ {
+    position: 330
+  } ]
+  @UI.lineItem: [ {
+    position: 330
+  } ]
+  @UI.selectionField: [ {
+    position: 330
+  } ]
+  LocalLastChangedAt;
+
+  @EndUserText.label: '_BaseEntity'
+  @UI.identification: [ {
+    position: 340 ,
+    label: '_BaseEntity'
+  } ]
+  @UI.lineItem: [ {
+    position: 340 ,
+    label: '_BaseEntity'
+  } ]
+  @UI.selectionField: [ {
+    position: 340
+  } ]
+  _BaseEntity;
+  
+  @UI.selectionField: [{ position: 350 }]
+  @EndUserText.label: '是否创建'
+  @Consumption.filter.defaultValue: ''
+  Zflag;
+}

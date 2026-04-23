@@ -1,0 +1,53 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Ztsd003', 
+    typeNamePlural: 'Ztsd003s', 
+    title: {
+      type: #STANDARD, 
+      label: '销售订单转积分订单配置表', 
+      value: 'Salesorganization'
+    }
+  }
+}
+annotate view ZI_CONFIG_Ztsd003 with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_CONFIG_Ztsd003', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: '销售订单转积分订单配置表', 
+    position: 1 
+  } ]
+  Salesorganization;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  Fsysid;
+  
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  @UI.lineItem: [ {
+    position: 3 
+  } ]
+  Zdmssotype;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  @UI.lineItem: [ {
+    position: 4 
+  } ]
+  Zzxflag;
+}

@@ -1,0 +1,85 @@
+managed implementation in class ZBP_I_CONFIG_ZTMM005_S unique;
+strict;
+with draft;
+define behavior for ZI_CONFIG_Ztmm005_S alias Ztmm005All
+draft table ZZTMM005_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _mm005 { create ( features : instance ); with draft; }
+
+}
+
+define behavior for ZI_CONFIG_Ztmm005 alias mm005 ##UNMAPPED_FIELD
+persistent table ZZTMM005
+draft table ZZTMM005_D
+etag master LocalLastChangedAt
+lock dependent by _Ztmm005All
+authorization dependent by _Ztmm005All
+{
+  field ( mandatory : create )
+   Conftype,
+   Relsystem;
+//   Transvalue;
+
+  field ( readonly )
+   SingletonID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   Conftype,
+   Relsystem,
+   Transvalue;
+
+  field ( notrigger )
+   SingletonID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZZTMM005
+  {
+    Conftype = CONFTYPE;
+    Relsystem = RELSYSTEM;
+    Transvalue = TRANSVALUE;
+    Confdesc = CONFDESC;
+    Sapvalue = SAPVALUE;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+  association _Ztmm005All { with draft; }
+
+}

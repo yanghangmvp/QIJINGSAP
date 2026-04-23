@@ -1,0 +1,4 @@
+@EndUserText.label: 'TA-科目余额'
+define service ZUI_QUERY_FI005 {
+  expose zc_query_FI005 as fi005;
+}

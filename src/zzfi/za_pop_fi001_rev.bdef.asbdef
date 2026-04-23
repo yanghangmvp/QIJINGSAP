@@ -1,0 +1,8 @@
+abstract;
+strict ( 2 );
+with hierarchy;
+
+define behavior for ZA_POP_FI001_REV alias rev with control
+{
+  field ( mandatory : execute ) ReversalReason;
+}

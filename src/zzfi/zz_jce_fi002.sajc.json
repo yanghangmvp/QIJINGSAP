@@ -1,0 +1,23 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "司库科目余额推送",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZZCL_JOB_FI008"
+  },
+  "parameters": [
+    {
+      "name": "POSTDATE",
+      "title": "过账日期",
+      "mandatory": true
+    },
+    {
+      "name": "COMPANYCODE",
+      "title": "公司代码",
+      "mandatory": true
+    }
+  ]
+}

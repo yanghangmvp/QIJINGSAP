@@ -1,0 +1,4 @@
+@EndUserText.label: 'TA-客商主数据'
+define service ZUI_QUERY_FI002 {
+  expose zc_query_FI002 as fi002;
+}

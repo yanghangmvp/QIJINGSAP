@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "会计凭证批导-暂存平台"
+  },
+  "ui5AppDetails": {
+    "appId": "zzfi010"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_36A290AFB41577BF9CFBA136B50C768278BC356A_TM",
+    "semanticObject": "zzfi010",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_36A290AFB41577BF9CFBA136B50C768278BC356A_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "会计凭证批导-暂存平台",
+        "subtitle": "会计凭证批导-暂存平台"
+      }
+    }
+  ]
+}

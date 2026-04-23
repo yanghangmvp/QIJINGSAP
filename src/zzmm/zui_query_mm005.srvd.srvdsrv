@@ -1,0 +1,4 @@
+@EndUserText.label: '库龄报表'
+define service ZUI_QUERY_MM005 {
+  expose zc_query_mm005 as mm005;
+}

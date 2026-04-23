@@ -1,0 +1,150 @@
+managed with additional save implementation in class ZBP_I_TABLE_ZTMM002_S unique;
+strict;
+with draft;
+define behavior for ZI_TABLE_Ztmm002_S alias Ztmm002All
+draft table zztmm002_d_s
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master ( global )
+{
+  field ( readonly )
+  SingletonID;
+
+  field ( features : instance )
+  TransportRequestID;
+
+  field ( notrigger )
+  SingletonID,
+  LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit with additional implementation;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _Ztmm002 { create ( features : instance ); with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT
+  {
+    create;
+    update;
+  }
+
+  side effects
+  {
+    action SelectCustomizingTransptReq affects
+        $self;
+  }
+
+}
+
+define behavior for ZI_TABLE_Ztmm002 alias Ztmm002 ##UNMAPPED_FIELD
+persistent table zztmm002
+draft table zztmm002_d
+lock dependent by _Ztmm002All
+authorization dependent by _Ztmm002All
+{
+  field ( mandatory : create )
+  Producttype,
+  Plant;
+
+  field ( readonly )
+  SingletonID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt,
+  ConfigDeprecationCode,
+  ConfigDeprecationCode_Critlty;
+
+  field ( readonly : update )
+  Producttype,
+  Plant;
+
+  field ( notrigger )
+  SingletonID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+
+  update ( features : global );
+  delete ( features : instance );
+
+  action ( features : instance ) Deprecate result [1] $self;
+  action ( features : instance ) Invalidate result [1] $self;
+
+  mapping for zztmm002
+    {
+      Producttype                    = PRODUCTTYPE;
+      Plant                          = PLANT;
+      Industrysector                 = INDUSTRYSECTOR;
+      Productgroup                   = PRODUCTGROUP;
+      Division                       = DIVISION;
+      Productsalesorg                = PRODUCTSALESORG;
+      Productdistributionchnl        = PRODUCTDISTRIBUTIONCHNL;
+      Supplyingplant                 = SUPPLYINGPLANT;
+      Country                        = COUNTRY;
+      Taxcategory                    = TAXCATEGORY;
+      Taxclassification              = TAXCLASSIFICATION;
+      Pricespecificationproductgroup = PRICESPECIFICATIONPRODUCTGROUP;
+      Accountdetnproductgroup        = ACCOUNTDETNPRODUCTGROUP;
+      Conventionalitemcategorygroup  = CONVENTIONALITEMCATEGORYGROUP;
+      Itemcategorygroup              = ITEMCATEGORYGROUP;
+      Transportationgroup            = TRANSPORTATIONGROUP;
+      Loadinggroup                   = LOADINGGROUP;
+      Serialnumberprofile            = SERIALNUMBERPROFILE;
+      Purchasinggroup                = PURCHASINGGROUP;
+      Isautopurordcreationallowed    = ISAUTOPURORDCREATIONALLOWED;
+      Profilecode                    = PROFILECODE;
+      Issourcelistrequired           = ISSOURCELISTREQUIRED;
+      Manufacturerpartprofile        = MANUFACTURERPARTPROFILE;
+      Isbatchmanagementrequired      = ISBATCHMANAGEMENTREQUIRED;
+      Procurementtype                = PROCUREMENTTYPE;
+      Procurementsubtype             = PROCUREMENTSUBTYPE;
+      Productioninvtrymanagedloc     = PRODUCTIONINVTRYMANAGEDLOC;
+      Dfltstoragelocationextprocmt   = DFLTSTORAGELOCATIONEXTPROCMT;
+      Mrptype                        = MRPTYPE;
+      Dependentrequirementstype      = DEPENDENTREQUIREMENTSTYPE;
+      Availabilitychecktype          = AVAILABILITYCHECKTYPE;
+      Mrpresponsible                 = MRPRESPONSIBLE;
+      Lotsizingprocedure             = LOTSIZINGPROCEDURE;
+      Valuationarea                  = VALUATIONAREA;
+      Currency                       = CURRENCY;
+      Inventoryvaluationprocedure    = INVENTORYVALUATIONPROCEDURE;
+      Priceunitqty                   = PRICEUNITQTY;
+      Valuationclass                 = VALUATIONCLASS;
+      Pricedeterminationcontrol      = PRICEDETERMINATIONCONTROL;
+      Costinglotsize                 = COSTINGLOTSIZE;
+      Productiscostingrelevant       = PRODUCTISCOSTINGRELEVANT;
+      Ismaterialcostedwithqtystruc   = ISMATERIALCOSTEDWITHQTYSTRUC;
+      Ismaterialrelatedorigin        = ISMATERIALRELATEDORIGIN;
+      Profitcenter                   = PROFITCENTER;
+      ConfigDeprecationCode          = CONFIGDEPRECATIONCODE;
+      CreatedBy                      = CREATED_BY;
+      CreatedAt                      = CREATED_AT;
+      LastChangedBy                  = LAST_CHANGED_BY;
+      LastChangedAt                  = LAST_CHANGED_AT;
+      LocalLastChangedAt             = LOCAL_LAST_CHANGED_AT;
+    }
+
+  association _Ztmm002All { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT
+  {
+    create;
+    update;
+    delete;
+  }
+
+}

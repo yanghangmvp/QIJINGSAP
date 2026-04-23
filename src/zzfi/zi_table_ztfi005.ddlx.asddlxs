@@ -1,0 +1,61 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Ztfi005', 
+    typeNamePlural: 'Ztfi005s', 
+    title: {
+      type: #STANDARD, 
+      label: '分配的现金流量码', 
+      value: 'Companycode'
+    }
+  }
+}
+annotate view ZI_TABLE_Ztfi005 with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TABLE_Ztfi005', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: '分配的现金流量码', 
+    position: 1 
+  } ]
+  Companycode;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  Fiscalyear;
+  
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  @UI.lineItem: [ {
+    position: 3 
+  } ]
+  Accountingdocument;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  @UI.lineItem: [ {
+    position: 4 
+  } ]
+  Ledgergllineitem;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  @UI.lineItem: [ {
+    position: 5 
+  } ]
+  Paymentdifferencereason;
+}

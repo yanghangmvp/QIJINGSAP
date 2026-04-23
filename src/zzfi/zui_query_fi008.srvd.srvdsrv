@@ -1,0 +1,4 @@
+@EndUserText.label: '销售暂估收入过账'
+define service ZUI_QUERY_FI008 {
+  expose zc_query_fi008 as fi008;
+}

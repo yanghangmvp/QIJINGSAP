@@ -1,0 +1,22 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "整车后台执行JOB",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZZCL_JOB_SD001"
+  },
+  "parameters": [
+    {
+      "name": "REFNO"
+    },
+    {
+      "name": "VKORG"
+    },
+    {
+      "name": "DMSTYPE"
+    }
+  ]
+}

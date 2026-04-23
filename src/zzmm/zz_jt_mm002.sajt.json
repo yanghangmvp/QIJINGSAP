@@ -1,0 +1,29 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "物料主数据推送",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "catalogName": "ZZ_JCE_MM002"
+  },
+  "parameters": {
+    "singleValueParameters": [
+      {
+        "name": "FLAG",
+        "value": ""
+      }
+    ],
+    "valueRangesParameters": [
+      {
+        "name": "PLANT",
+        "valueRanges": []
+      },
+      {
+        "name": "PRODUCT",
+        "valueRanges": []
+      }
+    ]
+  }
+}

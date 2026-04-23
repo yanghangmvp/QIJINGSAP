@@ -1,0 +1,89 @@
+managed with additional save implementation in class ZBP_I_TABLE_ZTFI004_S unique;
+strict;
+with draft;
+define behavior for ZI_TABLE_Ztfi004_S alias Ztfi004All
+draft table ZZTFI004_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( features : instance )
+   TransportRequestID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _Ztfi004 { create ( features : instance ); with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; }
+
+  side effects {
+    action SelectCustomizingTransptReq affects $self;
+  }
+
+}
+
+define behavior for ZI_TABLE_Ztfi004 alias Ztfi004 ##UNMAPPED_FIELD
+persistent table ZZTFI004
+draft table ZZTFI004_D
+lock dependent by _Ztfi004All
+authorization dependent by _Ztfi004All
+{
+  field ( mandatory : create )
+   Companycode,
+   Fiitem,
+   Fisuit;
+
+  field ( readonly )
+   SingletonID;
+
+  field ( readonly : update )
+   Companycode,
+   Fiitem,
+   Fisuit;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZZTFI004
+  {
+    Companycode = COMPANYCODE;
+    Fiitem = FIITEM;
+    Fisuit = FISUIT;
+    Fitext = FITEXT;
+    Fitype = FITYPE;
+    Fisign = FISIGN;
+    Paymentdifferencereason = PAYMENTDIFFERENCEREASON;
+    Itemfrom = ITEMFROM;
+    Itemto = ITEMTO;
+    Glaccountfrom = GLACCOUNTFROM;
+    Glaccountto = GLACCOUNTTO;
+    Debitcreditcode = DEBITCREDITCODE;
+    ConfigDeprecationCode = CONFIGDEPRECATIONCODE;
+  }
+
+  association _Ztfi004All { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+
+}

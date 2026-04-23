@@ -1,0 +1,4 @@
+@EndUserText.label: 'TA-账龄原值'
+define service ZUI_QUERY_FI007 {
+  expose zc_query_FI007 as fi007;
+}

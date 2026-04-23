@@ -1,0 +1,4 @@
+@EndUserText.label: 'TA-凭证明细'
+define service ZUI_QUERY_FI003 {
+  expose zc_query_FI003 as fi003;
+}

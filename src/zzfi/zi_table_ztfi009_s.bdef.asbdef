@@ -1,0 +1,70 @@
+managed with additional save implementation in class ZBP_I_TABLE_ZTFI009_S unique;
+strict;
+with draft;
+define behavior for ZI_table_Ztfi009_S alias Ztfi009All
+draft table ZZTFI009_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _Ztfi009 { create ( features : instance ); with draft; }
+
+}
+
+define behavior for ZI_table_Ztfi009 alias Ztfi009 ##UNMAPPED_FIELD
+persistent table ZZTFI009
+draft table ZZTFI009_D
+lock dependent by _Ztfi009All
+authorization dependent by _Ztfi009All
+{
+  field ( mandatory : create )
+   Glaccount;
+
+  field ( readonly )
+   SingletonID,
+   ConfigDeprecationCode,
+   ConfigDeprecationCode_Critlty;
+
+  field ( readonly : update )
+   Glaccount;
+
+  field ( notrigger )
+   SingletonID;
+
+
+  update( features : global );
+  delete( features : instance );
+
+  action ( features : instance ) Deprecate result [1] $self;
+  action ( features : instance ) Invalidate result [1] $self;
+  factory action ( features : instance ) Copy parameter ZD_table_Ztfi009 [1];
+
+  mapping for ZZTFI009
+  {
+    Glaccount = GLACCOUNT;
+    ZzmoveS = ZZMOVE_S;
+    ZzmoveH = ZZMOVE_H;
+    ConfigDeprecationCode = CONFIGDEPRECATIONCODE;
+  }
+
+  association _Ztfi009All { with draft; }
+
+}

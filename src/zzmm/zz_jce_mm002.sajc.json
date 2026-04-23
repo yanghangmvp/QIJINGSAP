@@ -1,0 +1,22 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "物料主数据推送",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZZCL_JOB_MM002"
+  },
+  "parameters": [
+    {
+      "name": "PRODUCT"
+    },
+    {
+      "name": "PLANT"
+    },
+    {
+      "name": "FLAG"
+    }
+  ]
+}

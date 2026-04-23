@@ -1,0 +1,23 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "司库科目余额推送",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "catalogName": "ZZ_JCE_FI002"
+  },
+  "parameters": {
+    "valueRangesParameters": [
+      {
+        "name": "COMPANYCODE",
+        "valueRanges": []
+      },
+      {
+        "name": "POSTDATE",
+        "valueRanges": []
+      }
+    ]
+  }
+}

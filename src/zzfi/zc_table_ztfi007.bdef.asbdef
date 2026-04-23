@@ -1,0 +1,23 @@
+projection implementation in class ZBP_TABLE_C_ZTFI007 unique;
+strict ( 1 );
+extensible;
+use draft;
+use side effects;
+define behavior for ZC_TABLE_ZTFI007 alias FI007
+extensible
+use etag
+{
+  use create;
+//  use update;
+  use delete;
+
+  use action zlsbs;
+  use action zhklx;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+}

@@ -1,0 +1,27 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "整车后台执行模板",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "catalogName": "ZZ_JCE_SD001"
+  },
+  "parameters": {
+    "valueRangesParameters": [
+      {
+        "name": "DMSTYPE",
+        "valueRanges": []
+      },
+      {
+        "name": "REFNO",
+        "valueRanges": []
+      },
+      {
+        "name": "VKORG",
+        "valueRanges": []
+      }
+    ]
+  }
+}

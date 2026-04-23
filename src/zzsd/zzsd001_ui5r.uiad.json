@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "销售平台"
+  },
+  "ui5AppDetails": {
+    "appId": "zzsd001"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_F5E69B835132F03352C2E0930F002880C814CE5B_TM",
+    "semanticObject": "zzsd001",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_F5E69B835132F03352C2E0930F002880C814CE5B_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "销售平台",
+        "subtitle": "销售平台"
+      }
+    }
+  ]
+}

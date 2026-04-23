@@ -1,0 +1,4 @@
+@EndUserText.label: '司库科目余额推送'
+define service ZUI_QUERY_FI009 {
+  expose ZC_QUERY_FI009;
+}

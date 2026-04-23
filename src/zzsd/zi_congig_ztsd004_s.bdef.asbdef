@@ -1,0 +1,84 @@
+managed implementation in class ZBP_I_CONFIG_ZTSD004_S unique;
+strict;
+with draft;
+define behavior for ZI_congig_Ztsd004_S alias Ztsd004All
+draft table ZZTSD004_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _sd004 { create ( features : instance ); with draft; }
+
+}
+
+define behavior for ZI_config_Ztsd004 alias sd004 ##UNMAPPED_FIELD
+persistent table ZZTSD004
+draft table ZZTSD004_D
+etag master LocalLastChangedAt
+lock dependent by _Ztsd004All
+authorization dependent by _Ztsd004All
+{
+  field ( mandatory : create )
+   Waers,
+   Zzbegin,
+   Zzend;
+
+  field ( readonly )
+   SingletonID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   Waers,
+   Zzbegin,
+   Zzend;
+
+  field ( notrigger )
+   SingletonID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZZTSD004
+  {
+    Waers = WAERS;
+    Zzbegin = ZZBEGIN;
+    Zzend = ZZEND;
+    Zzbl = ZZBL;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+  association _Ztsd004All { with draft; }
+
+}

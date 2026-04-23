@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZC_TABLE_ZTFI002'
+@MappingRole: true
+define role ZC_TABLE_ZTFI002 {
+  grant select on ZC_TABLE_ZTFI002
+  where INHERITING CONDITIONS FROM ENTITY ZR_TABLE_ZTFI002;
+}

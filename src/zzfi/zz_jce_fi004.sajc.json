@@ -1,0 +1,23 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "司库银行日记账凭证推送JOB",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZZCL_JOB_FI010"
+  },
+  "parameters": [
+    {
+      "name": "COMPANY_CODE",
+      "title": "公司代码",
+      "mandatory": true
+    },
+    {
+      "name": "POST_DATE",
+      "title": "过账日期",
+      "mandatory": true
+    }
+  ]
+}

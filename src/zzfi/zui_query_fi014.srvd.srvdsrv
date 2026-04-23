@@ -1,0 +1,4 @@
+@EndUserText.label: '收入成本表'
+define service ZUI_QUERY_FI014 {
+  expose zc_query_fi014 as fi014;
+}

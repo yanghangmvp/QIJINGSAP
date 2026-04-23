@@ -1,0 +1,177 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: '会计凭证审核-行项目',
+    typeNamePlural: '会计凭证审核-行项目',
+    title: { type: #STANDARD, value: 'Accountingdocumentitem' },
+    description: { value: 'Accountingdocumentitem' }
+   }
+ }
+annotate view ZC_TABLE_ZTFI002 with
+{
+
+  @UI.facet: [ {
+    label: '常规信息',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+
+  @EndUserText.label: '业务单据号'
+  @UI.identification: [ { position: 10  } ]
+  @UI.lineItem: [ {  position: 10  } ]
+  Reference1indocumentheader;
+
+  @EndUserText.label: '数据来源'
+  @UI.identification: [ { position: 20  } ]
+  @UI.lineItem: [ {  position: 20  } ]
+  Datasource;
+
+  @EndUserText.label: '凭证行项目'
+  @UI.identification: [ { position: 30  } ]
+  @UI.lineItem: [ {  position: 30  } ]
+  Accountingdocumentitem;
+
+  @EndUserText.label: '总账科目'
+  @UI.identification: [ { position: 40  } ]
+  @UI.lineItem: [ {  position: 40  } ]
+  Glaccount;
+
+  @EndUserText.label: '凭证货币金额'
+  @UI.identification: [ { position: 50  } ]
+  @UI.lineItem: [ {  position: 50  } ]
+  Amountintransactioncurrency;
+
+  @EndUserText.label: '按本位币计的金额'
+  @UI.identification: [ { position: 60  } ]
+  @UI.lineItem: [ {  position: 60  } ]
+  Amountincompanycodecurrency;
+
+  @EndUserText.label: '借贷码'
+  @UI.identification: [ { position: 70  } ]
+  @UI.lineItem: [ {  position: 70  } ]
+  Debitcreditcode;
+
+  @EndUserText.label: '项目文本'
+  @UI.identification: [ { position: 80  } ]
+  @UI.lineItem: [ {  position: 80  } ]
+  Documentitemtext;
+
+  @EndUserText.label: '付款原因代码'
+  @UI.identification: [ { position: 90  } ]
+  @UI.lineItem: [ {  position: 90  } ]
+  Reasoncode;
+
+  @EndUserText.label: '分配编号'
+  @UI.identification: [ { position: 100  } ]
+  @UI.lineItem: [ {  position: 100  } ]
+  Assignmentreference;
+
+  @EndUserText.label: '利润中心'
+  @UI.identification: [ { position: 110  } ]
+  @UI.lineItem: [ {  position: 110  } ]
+  Profitcenter;
+
+  @EndUserText.label: '成本中心'
+  @UI.identification: [ { position: 120  } ]
+  @UI.lineItem: [ {  position: 120  } ]
+  Costcenter;
+
+  @EndUserText.label: '职能范围'
+  @UI.identification: [ { position: 130  } ]
+  @UI.lineItem: [ {  position: 130  } ]
+  Functionalarea;
+
+  @EndUserText.label: 'WBS元素'
+  @UI.identification: [ { position: 140  } ]
+  @UI.lineItem: [ {  position: 140  } ]
+  Wbselement;
+
+  @EndUserText.label: '客户编号'
+  @UI.identification: [ { position: 150  } ]
+  @UI.lineItem: [ {  position: 150  } ]
+  Customer;
+
+  @EndUserText.label: '特别总账标识'
+  @UI.identification: [ { position: 160  } ]
+  @UI.lineItem: [ {  position: 160  } ]
+  Specialglcode;
+
+  @EndUserText.label: '备选统驭科目'
+  @UI.identification: [ { position: 170  } ]
+  @UI.lineItem: [ {  position: 170  } ]
+  Altvrecnclnaccts;
+
+  @EndUserText.label: '信用控制区域'
+  @UI.identification: [ { position: 180  } ]
+  @UI.lineItem: [ {  position: 180  } ]
+  Creditcontrolarea;
+
+  @EndUserText.label: '供应商或债权人的帐号'
+  @UI.identification: [ { position: 190  } ]
+  @UI.lineItem: [ {  position: 190  } ]
+  Vendor;
+
+  @EndUserText.label: '到期日期计算的起算日期'
+  @UI.identification: [ { position: 200  } ]
+  @UI.lineItem: [ {  position: 200  } ]
+  Duecalculationbasedate;
+
+  @EndUserText.label: '付款参考'
+  @UI.identification: [ { position: 210  } ]
+  @UI.lineItem: [ {  position: 210  } ]
+  Paymentreference;
+
+  @EndUserText.label: '贸易伙伴的公司标识'
+  @UI.identification: [ { position: 220  } ]
+  @UI.lineItem: [ {  position: 220  } ]
+  Tradingpartner;
+
+  @EndUserText.label: '车型'
+  @UI.identification: [ { position: 230  } ]
+  @UI.lineItem: [ {  position: 230  } ]
+  Zz005;
+
+  @EndUserText.label: '销售订单'
+  @UI.identification: [ { position: 240  } ]
+  @UI.lineItem: [ {  position: 240  } ]
+  Salesorder;
+
+  @EndUserText.label: '销售订单行'
+  @UI.identification: [ { position: 250  } ]
+  @UI.lineItem: [ {  position: 250  } ]
+  Salesorderitem;
+
+  @EndUserText.label: '工厂'
+  @UI.identification: [ { position: 260  } ]
+  @UI.lineItem: [ {  position: 260  } ]
+  Plant;
+
+  @EndUserText.label: '物料'
+  @UI.identification: [ { position: 260  } ]
+  @UI.lineItem: [ {  position: 260  } ]
+  Material;
+
+  @EndUserText.label: '参考代码 3'
+  @UI.identification: [ { position: 260  } ]
+  @UI.lineItem: [ {  position: 260  } ]
+  Reference3idbybusinesspartner;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+
+}

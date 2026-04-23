@@ -1,0 +1,19 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "采购价格主数据推送",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZZCL_JOB_MM003"
+  },
+  "parameters": [
+    {
+      "name": "INFNR"
+    },
+    {
+      "name": "JOB"
+    }
+  ]
+}

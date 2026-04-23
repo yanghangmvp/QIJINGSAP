@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "TA-现金流量"
+  },
+  "ui5AppDetails": {
+    "appId": "zzqueryfi006"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_D8EC7FC9DFBC574207964ACF2C37C87BB060E095_TM",
+    "semanticObject": "zzqueryfi006",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_D8EC7FC9DFBC574207964ACF2C37C87BB060E095_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "TA-现金流量",
+        "subtitle": "TA-现金流量"
+      }
+    }
+  ]
+}

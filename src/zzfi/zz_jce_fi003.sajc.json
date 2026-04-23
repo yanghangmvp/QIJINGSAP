@@ -1,0 +1,16 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "司库流水凭证回传JOB",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZZCL_JOB_FI009"
+  },
+  "parameters": [
+    {
+      "name": "REFERENC"
+    }
+  ]
+}

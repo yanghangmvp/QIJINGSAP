@@ -1,0 +1,101 @@
+managed with additional save implementation in class ZBP_I_ZTFI001_S unique;
+strict;
+with draft;
+define behavior for ZI_CONFIG_Ztfi001_S alias Ztfi001All
+draft table zztfi001_d_s
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master ( global )
+{
+  field ( readonly )
+  SingletonID;
+
+  field ( notrigger )
+  SingletonID,
+  HideTransport,
+  LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit with additional implementation;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _Ztfi001 { create ( features : instance ); with draft; }
+
+
+
+}
+
+define behavior for ZI_CONFIG_Ztfi001 alias Ztfi001 ##UNMAPPED_FIELD
+persistent table zztfi001
+draft table zztfi001_cd
+etag master LocalLastChangedAt
+lock dependent by _Ztfi001All
+authorization dependent by _Ztfi001All
+{
+  field ( mandatory : create )
+  Reference1indocumentheader,
+  Datasource;
+
+  field ( readonly )
+  SingletonID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+  field ( readonly : update )
+  Reference1indocumentheader,
+  Datasource;
+
+  field ( notrigger )
+  SingletonID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+
+  update ( features : global );
+  delete ( features : global );
+
+  mapping for zztfi001
+    {
+      Reference1indocumentheader    = REFERENCE1INDOCUMENTHEADER;
+      Datasource                    = DATASOURCE;
+      Originalreferencedocumenttype = ORIGINALREFERENCEDOCUMENTTYPE;
+      Businesstransactiontype       = BUSINESSTRANSACTIONTYPE;
+      Companycode                   = COMPANYCODE;
+      Fiscalperiod                  = FISCALPERIOD;
+      Accountingdocumenttype        = ACCOUNTINGDOCUMENTTYPE;
+      Postingdate                   = POSTINGDATE;
+      Documentdate                  = DOCUMENTDATE;
+      Transactioncurrency           = TRANSACTIONCURRENCY;
+      Exchangerate                  = EXCHANGERATE;
+      Accountingdoccreatedbyuser    = ACCOUNTINGDOCCREATEDBYUSER;
+      Accountingdocumentheadertext  = ACCOUNTINGDOCUMENTHEADERTEXT;
+      Accountingdocument            = ACCOUNTINGDOCUMENT;
+      Fiscalyear                    = FISCALYEAR;
+      Virtualnum                    = VIRTUALNUM;
+      Flag                          = FLAG;
+      Msgty                         = MSGTY;
+      Msgtx                         = MSGTX;
+      CreatedBy                     = CREATED_BY;
+      CreatedAt                     = CREATED_AT;
+      LastChangedBy                 = LAST_CHANGED_BY;
+      LastChangedAt                 = LAST_CHANGED_AT;
+      LocalLastChangedAt            = LOCAL_LAST_CHANGED_AT;
+    }
+
+  association _Ztfi001All { with draft; }
+
+
+}

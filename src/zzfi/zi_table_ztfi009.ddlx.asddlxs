@@ -1,0 +1,109 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Ztfi009',
+    typeNamePlural: 'Ztfi009s',
+    title: {
+      type: #STANDARD,
+      label: '科目与变动维度映射表',
+      value: 'Glaccount'
+    }
+  }
+}
+annotate view ZI_table_Ztfi009 with
+{
+  @UI.hidden: true
+  ConfigDeprecationCode_Critlty;
+
+  @UI.identification: [ {
+    position: 1
+  } ]
+  @UI.lineItem: [ {
+    position: 1
+  },
+  {
+    type: #FOR_ACTION,
+    dataAction: 'Copy',
+    label: '复制选定的条目',
+    invocationGrouping: #CHANGE_SET
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_table_Ztfi009',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: '科目与变动维度映射表',
+    position: 1
+  } ]
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CnsldtnGLAccountVH',
+                                               element: 'GLAccount' },
+                                               useForValidation: true
+                                  }]
+  Glaccount;
+
+  @UI.identification: [ {
+    position: 2
+  } ]
+  @UI.lineItem: [ {
+    position: 2
+  } ]
+  @EndUserText.label   : '变动类型-S'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZR_VH_ZZMOVE_DATASOURCE',
+                                               element: 'value' },
+                                               useForValidation: true
+                                  }]
+  ZzmoveS;
+
+  @UI.identification: [ {
+    position: 3
+  } ]
+  @UI.lineItem: [ {
+    position: 3
+  } ]
+  @EndUserText.label   : '变动类型-H'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZR_VH_ZZMOVE_DATASOURCE',
+                                               element: 'value' },
+                                               useForValidation: true
+                                  }]
+  ZzmoveH;
+
+  //  @UI.hidden: true
+  //  GLAccountName;
+  //  @UI.hidden: true
+  //  zzmovesname;
+  //  @UI.hidden: true
+  //  zzmovehname;
+
+  //  @UI.identification: [ {
+  //    position: 4 ,
+  //    criticality: 'ConfigDeprecationCode_Critlty'
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Deprecate',
+  //    label: '不赞成使用'
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Invalidate',
+  //    label: '无效'
+  //  } ]
+  //  @UI.textArrangement: #TEXT_ONLY
+  //  @UI.lineItem: [ {
+  //    position: 4 ,
+  //    criticality: 'ConfigDeprecationCode_Critlty'
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Deprecate',
+  //    label: '不赞成使用所选条目',
+  //    invocationGrouping: #CHANGE_SET
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Invalidate',
+  //    label: '使所选条目无效',
+  //    invocationGrouping: #CHANGE_SET
+  //  } ]
+  @UI.hidden: true
+  ConfigDeprecationCode;
+}

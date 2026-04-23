@@ -1,0 +1,72 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Ztmm001',
+    typeNamePlural: 'Ztmm001s',
+    title: {
+      type: #STANDARD,
+      label: '车型记录表',
+      value: 'Modelcode'
+    }
+  }
+}
+annotate view ZI_TABLE_Ztmm001 with
+{
+  @UI.hidden: true
+  ConfigDeprecationCode_Critlty;
+
+  @UI.identification: [ {
+    position: 1
+  } ]
+  @UI.lineItem: [ {
+    position: 1
+  },
+  {
+    type: #FOR_ACTION,
+    dataAction: 'Copy',
+    label: '复制选定的条目',
+    invocationGrouping: #CHANGE_SET
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TABLE_Ztmm001',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: '车型记录表',
+    position: 1
+  } ]
+  Modelcode;
+
+  //  @UI.identification: [ {
+  //    position: 2 ,
+  //    criticality: 'ConfigDeprecationCode_Critlty'
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Deprecate',
+  //    label: '不赞成使用'
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Invalidate',
+  //    label: '无效'
+  //  } ]
+  //  @UI.textArrangement: #TEXT_ONLY
+  //  @UI.lineItem: [ {
+  //    position: 2 ,
+  //    criticality: 'ConfigDeprecationCode_Critlty'
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Deprecate',
+  //    label: '不赞成使用所选条目',
+  //    invocationGrouping: #CHANGE_SET
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Invalidate',
+  //    label: '使所选条目无效',
+  //    invocationGrouping: #CHANGE_SET
+  //  } ]
+  @UI.hidden: true
+  ConfigDeprecationCode;
+}

@@ -1,0 +1,311 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: '整车处理平台',
+    typeNamePlural: '整车处理平台',
+    title: { type: #STANDARD, value: 'Purchaseorderbycustomer' },
+    description: { value: 'Purchaseorderbycustomer' }
+   }
+ }
+annotate view ZC_TABLE_ZTSD001 with
+{
+  @UI.facet: [ {
+                  label: '常规信息',
+                  id: 'GeneralInfo',
+                  purpose: #STANDARD,
+                  position: 10 ,
+                  type: #IDENTIFICATION_REFERENCE
+             } ,
+             {    id: 'Append',
+                  type:#LINEITEM_REFERENCE,
+                  targetElement: '_SD002',
+                  label: '行项目数据',
+                  position: 20
+              } ]
+
+
+  @EndUserText.label: '客户参考'
+  @UI.identification: [ { position: 10 } ,
+                        { position: 01 ,type: #FOR_ACTION, dataAction: 'zzprocess', label: '手工处理'}
+  ]
+  @UI.lineItem: [ { position: 10 } ,
+                  { position: 01 ,type: #FOR_ACTION, dataAction: 'zzprocess',invocationGrouping: #CHANGE_SET,  label: '手工处理'}
+  ]
+  @UI.selectionField: [ { position: 10 } ]
+  Purchaseorderbycustomer;
+
+  @UI.identification: [ {
+    position: 20
+  } ]
+  @UI.lineItem: [ {
+    position: 20
+  } ]
+  Fsysid;
+
+  @EndUserText.label: '订单类型'
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+  Salesdocumenttype;
+
+  @EndUserText.label: '凭证日期'
+  @UI.identification: [ {
+    position: 40
+  } ]
+  @UI.lineItem: [ {
+    position: 40
+  } ]
+
+  Salesdocumentdate;
+
+  @EndUserText.label: '销售组织'
+  @UI.identification: [ {
+    position: 50
+  } ]
+  @UI.lineItem: [ {
+    position: 50
+  } ]
+
+  Salesorganization;
+
+  @EndUserText.label: '分销渠道'
+  @UI.identification: [ {
+    position: 60
+  } ]
+  @UI.lineItem: [ {
+    position: 60
+  } ]
+
+  Distributionchannel;
+
+  @EndUserText.label: '产品组'
+  @UI.identification: [ {
+    position: 70
+  } ]
+  @UI.lineItem: [ {
+    position: 70
+  } ]
+  Organizationdivision;
+
+  @EndUserText.label: '销售办事处'
+  @UI.identification: [ {
+    position: 80
+  } ]
+  @UI.lineItem: [ {
+    position: 80
+  } ]
+
+  Salesoffice;
+
+  @EndUserText.label: '销售组'
+  @UI.identification: [ {
+    position: 90
+  } ]
+  @UI.lineItem: [ {
+    position: 90
+  } ]
+
+  Salesgroup;
+
+  @EndUserText.label: '售达方'
+  @UI.identification: [ {
+    position: 100
+  } ]
+  @UI.lineItem: [ {
+    position: 100
+  } ]
+
+  Soldtoparty;
+
+  @EndUserText.label: '凭证币别'
+  @UI.identification: [ {
+    position: 110
+  } ]
+  @UI.lineItem: [ {
+    position: 110
+  } ]
+
+  Transactioncurrency;
+
+  @EndUserText.label: '订单原因'
+  @UI.identification: [ {
+    position: 120
+  } ]
+  @UI.lineItem: [ {
+    position: 120
+  } ]
+
+  Sddocumentreason;
+
+  @EndUserText.label: '物流公司'
+  @UI.identification: [ {
+    position: 130
+  } ]
+  @UI.lineItem: [ {
+    position: 130
+  } ]
+
+  Zlogisticscompany;
+
+  @EndUserText.label: '物流单号'
+  @UI.identification: [ {
+    position: 140
+  } ]
+  @UI.lineItem: [ {
+    position: 140
+  } ]
+
+  Zlogisticsnumber;
+
+  @EndUserText.label: '付款日期'
+  @UI.identification: [ {
+    position: 150
+  } ]
+  @UI.lineItem: [ {
+    position: 150
+  } ]
+
+  Zpaymentdate;
+
+  @EndUserText.label: '付款时间'
+  @UI.identification: [ {
+    position: 160
+  } ]
+  @UI.lineItem: [ {
+    position: 160
+  } ]
+
+  Zpaymenttime;
+
+  @EndUserText.label: '付款方式'
+  @UI.identification: [ {
+    position: 170
+  } ]
+  @UI.lineItem: [ {
+    position: 170
+  } ]
+
+  Zpaymentmethod;
+
+  @EndUserText.label: '付款金额'
+  @UI.identification: [ {
+    position: 180
+  } ]
+  @UI.lineItem: [ {
+    position: 180
+  } ]
+
+  Zpaymentamount;
+
+  @EndUserText.label: '备注'
+  @UI.identification: [ {
+    position: 190
+  } ]
+  @UI.lineItem: [ {
+    position: 190
+  } ]
+
+  Zhbeizu;
+
+  @EndUserText.label: '前端平台单号'
+  @UI.identification: [ {
+    position: 200
+  } ]
+  @UI.lineItem: [ {
+    position: 200
+  } ]
+
+  Zplatformcode;
+
+  @EndUserText.label: 'DMS订单类型'
+  @UI.identification: [ {
+    position: 210
+  } ]
+  @UI.lineItem: [ {
+    position: 210
+  } ]
+
+  Zdmssotype;
+
+  @EndUserText.label: '客户科目分配组'
+  @UI.identification: [ {
+    position: 220
+  } ]
+  @UI.lineItem: [ {
+    position: 220
+  } ]
+
+  Customeraccountassignmentgroup;
+
+  @EndUserText.label: '金税发票号码'
+  @UI.identification: [ {
+    position: 230
+  } ]
+  @UI.lineItem: [ {
+    position: 230
+  } ]
+
+  Zfphm;
+
+
+  @EndUserText.label: '销售订单号'
+  @UI.identification: [ {
+    position: 290
+  } ]
+  @UI.lineItem: [ {
+    position: 290
+  } ]
+  @Consumption.semanticObject: 'SalesDocument'
+  Salesdocument;
+
+  @EndUserText.label: '交货单号'
+  @UI.identification: [ {
+    position: 300
+  } ]
+  @UI.lineItem: [ {
+    position: 300
+  } ]
+  @Consumption.semanticObject: 'OutboundDelivery'
+  Deliverydocument;
+
+  @EndUserText.label: '销售发票号'
+  @UI.identification: [ {
+    position: 310
+  } ]
+  @UI.lineItem: [ {
+    position: 310
+  } ]
+  @Consumption.semanticObject: 'BillingDocument'
+  Billingdocument;
+
+  @UI.identification: [ {
+    position: 320
+  } ]
+  @UI.lineItem: [ {
+    position: 320
+  } ]
+  Zzxzt;
+
+  @EndUserText.label: '状态'
+  @UI.identification: [ {
+    position: 330
+  } ]
+  @UI.lineItem: [ {
+    position: 330
+  } ]
+  Msgty;
+
+  @EndUserText.label: '消息'
+  @UI.identification: [ {
+    position: 340
+  } ]
+  @UI.lineItem: [ {
+    position: 340
+  } ]
+  Msgtx;
+
+
+}

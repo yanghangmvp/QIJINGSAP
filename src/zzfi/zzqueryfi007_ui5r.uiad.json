@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "TA-账龄原值"
+  },
+  "ui5AppDetails": {
+    "appId": "zzqueryfi007"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_86882EA9894F2A458EA2AEC0BDF780F6F4F942D2_TM",
+    "semanticObject": "zzqueryfi007",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_86882EA9894F2A458EA2AEC0BDF780F6F4F942D2_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "TA-账龄原值",
+        "subtitle": "TA-账龄原值"
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_config_Ztfi011_S'
+define service ZUI_CONFIG_ZTFI011 {
+  expose ZI_CONFIG_ZTFI011_S as Ztfi011All;
+  expose ZI_CONFIG_ZTFI011 as Ztfi011;
+}

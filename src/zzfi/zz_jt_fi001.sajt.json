@@ -1,0 +1,19 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "司库银行流水获取JOB",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "catalogName": "ZZ_JCE_FI001"
+  },
+  "parameters": {
+    "valueRangesParameters": [
+      {
+        "name": "DATE",
+        "valueRanges": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: '采购收退货明细下发'
+define service ZUI_QUERY_MM004 {
+  expose zc_query_mm004 as mm004;
+}

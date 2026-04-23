@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "回款处理平台"
+  },
+  "ui5AppDetails": {
+    "appId": "zzfi007"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_DD77879F4371AE0518A88DE805F99783BDF6E3B0_TM",
+    "semanticObject": "zzfi007",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_DD77879F4371AE0518A88DE805F99783BDF6E3B0_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "回款处理平台",
+        "subtitle": "回款处理平台"
+      }
+    }
+  ]
+}

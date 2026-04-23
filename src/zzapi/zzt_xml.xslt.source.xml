@@ -1,0 +1,19 @@
+<?sap.transform simple?>
+<tt:transform xmlns:tt="http://www.sap.com/transformation-templates">
+
+  <tt:root name="MSG"/>
+
+  <tt:template>
+    <msg>
+      <Entry>
+        <result>
+          <tt:value ref="MSG.ENTRY.RESULT"/>
+        </result>
+        <message>
+          <tt:value ref="MSG.ENTRY.MESSAGE"/>
+        </message>
+      </Entry>
+    </msg>
+  </tt:template>
+
+</tt:transform>

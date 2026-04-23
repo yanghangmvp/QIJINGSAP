@@ -1,0 +1,365 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Ztmm002',
+    typeNamePlural: 'Ztmm002s',
+    title: {
+      type: #STANDARD,
+      label: '物料主数据配置表',
+      value: 'Producttype'
+    }
+  }
+}
+annotate view ZI_TABLE_Ztmm002 with
+{
+  @UI.hidden: true
+  ConfigDeprecationCode_Critlty;
+
+  @UI.identification: [ {
+    position: 1
+  } ]
+  @UI.lineItem: [ {
+    position: 1
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_TABLE_Ztmm002',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: '物料主数据配置表',
+    position: 1
+  } ]
+  Producttype;
+
+  @UI.identification: [ {
+    position: 2
+  } ]
+  @UI.lineItem: [ {
+    position: 2
+  } ]
+  Plant;
+
+  @UI.identification: [ {
+    position: 3
+  } ]
+  @UI.lineItem: [ {
+    position: 3
+  } ]
+  Industrysector;
+
+  @UI.identification: [ {
+    position: 4
+  } ]
+  @UI.lineItem: [ {
+    position: 4
+  } ]
+  Productgroup;
+
+  @UI.identification: [ {
+    position: 5
+  } ]
+  @UI.lineItem: [ {
+    position: 5
+  } ]
+  Division;
+
+  @UI.identification: [ {
+    position: 6 ,
+    label: '销售组织'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 ,
+    label: '销售组织'
+  } ]
+  @EndUserText.label          : '销售组织'
+  Productsalesorg;
+
+  @UI.identification: [ {
+    position: 7 ,
+    label: '分销渠道'
+  } ]
+  @UI.lineItem: [ {
+    position: 7 ,
+    label: '分销渠道'
+  } ]
+  @EndUserText.label          : '分销渠道'
+  Productdistributionchnl;
+
+  @UI.identification: [ {
+    position: 8 ,
+    label: '交货工厂'
+  } ]
+  @UI.lineItem: [ {
+    position: 8 ,
+    label: '交货工厂'
+  } ]
+  @EndUserText.label          : '交货工厂'
+  Supplyingplant;
+
+  @UI.identification: [ {
+    position: 9 ,
+    label: '启运国'
+  } ]
+  @UI.lineItem: [ {
+    position: 9 ,
+    label: '启运国'
+  } ]
+  @EndUserText.label          : '启运国'
+  Country;
+
+  @UI.identification: [ {
+    position: 10 ,
+    label: '税收类型'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 ,
+    label: '税收类型'
+  } ]
+  @EndUserText.label          : '税收类型'
+  Taxcategory;
+
+  @UI.identification: [ {
+    position: 11 ,
+    label: '税分类'
+  } ]
+  @EndUserText.label          : '税分类'
+  Taxclassification;
+
+  @UI.identification: [ {
+    position: 12 ,
+    label: '物料价格组'
+  } ]
+  @EndUserText.label          : '物料价格组'
+  Pricespecificationproductgroup;
+
+  @UI.identification: [ {
+    position: 13 ,
+    label: '物料科目分配组'
+  } ]
+  @EndUserText.label          : '物料科目分配组'
+  Accountdetnproductgroup;
+
+  @UI.identification: [ {
+    position: 14 ,
+    label: '常规项目类别组'
+  } ]
+  @EndUserText.label          : '常规项目类别组'
+  Conventionalitemcategorygroup;
+
+  @UI.identification: [ {
+    position: 15 ,
+    label: '项目类别组'
+  } ]
+  @EndUserText.label          : '项目类别组'
+  Itemcategorygroup;
+
+  @UI.identification: [ {
+    position: 16 ,
+    label: '运输组'
+  } ]
+  @EndUserText.label          : '运输组'
+  Transportationgroup;
+
+  @UI.identification: [ {
+    position: 17 ,
+    label: '装货组'
+  } ]
+  @EndUserText.label          : '装货组'
+  Loadinggroup;
+
+  @UI.identification: [ {
+    position: 18 ,
+    label: '序列号参数文件'
+  } ]
+  @EndUserText.label          : '序列号参数文件'
+  Serialnumberprofile;
+
+  @UI.identification: [ {
+    position: 19
+  } ]
+  Purchasinggroup;
+
+  @UI.identification: [ {
+    position: 20 ,
+    label: '自动采购单'
+  } ]
+  @EndUserText.label          : '自动采购单'
+  Isautopurordcreationallowed;
+
+  //  @UI.identification: [ {
+  //    position: 21 ,
+  //    label: 'Profilecode'
+  //  } ]
+  @UI.hidden: true
+  Profilecode;
+
+  @UI.identification: [ {
+    position: 22 ,
+    label: '源清单'
+  } ]
+  @EndUserText.label          : '源清单'
+  Issourcelistrequired;
+
+  @UI.identification: [ {
+    position: 23 ,
+    label: '制造商部件参数文件'
+  } ]
+  @EndUserText.label          : '制造商部件参数文件'
+  Manufacturerpartprofile;
+
+  @UI.identification: [ {
+    position: 24 ,
+    label: '批次管理-工厂'
+  } ]
+  @EndUserText.label          : '批次管理-工厂'
+  Isbatchmanagementrequired;
+
+  @UI.identification: [ {
+    position: 25
+  } ]
+  Procurementtype;
+
+  @UI.identification: [ {
+    position: 26 ,
+    label: '特殊采购类型'
+  } ]
+  @EndUserText.label          : '特殊采购类型'
+  Procurementsubtype;
+
+  @UI.identification: [ {
+    position: 27 ,
+    label: '生产库存地点'
+  } ]
+  @EndUserText.label          : '生产库存地点'
+  Productioninvtrymanagedloc;
+
+  @UI.identification: [ {
+    position: 28 ,
+    label: '采购库存地点'
+  } ]
+  @EndUserText.label          : '采购库存地点'
+  Dfltstoragelocationextprocmt;
+
+  @UI.identification: [ {
+    position: 29
+  } ]
+  Mrptype;
+
+  @UI.identification: [ {
+    position: 30 ,
+    label: '独立集中'
+  } ]
+  @EndUserText.label          : '独立集中'
+  Dependentrequirementstype;
+
+  @UI.identification: [ {
+    position: 31
+  } ]
+  Availabilitychecktype;
+
+  @UI.identification: [ {
+    position: 32 ,
+    label: 'MRP控制员'
+  } ]
+  @EndUserText.label          : 'MRP控制员'
+  Mrpresponsible;
+
+  @UI.identification: [ {
+    position: 33 ,
+    label: '批量确定程序'
+  } ]
+  @EndUserText.label          : '批量确定程序'
+  Lotsizingprocedure;
+
+  @UI.identification: [ {
+    position: 34 ,
+    label: '评估范围'
+  } ]
+  @EndUserText.label          : '评估范围'
+  Valuationarea;
+
+  @UI.identification: [ {
+    position: 35
+  } ]
+  @Consumption.valueHelpDefinition: [ {
+    entity: {
+      name: 'I_CurrencyStdVH',
+      element: 'Currency'
+    },
+    useForValidation: true
+  } ]
+  Currency;
+
+  @UI.identification: [ {
+    position: 36
+  } ]
+  Inventoryvaluationprocedure;
+
+  @UI.identification: [ {
+    position: 37
+  } ]
+  Priceunitqty;
+
+  @UI.identification: [ {
+    position: 38
+  } ]
+  Valuationclass;
+
+  @UI.identification: [ {
+    position: 39 ,
+    label: '价格确定'
+  } ]
+  @EndUserText.label          : '价格确定'
+  Pricedeterminationcontrol;
+
+//  @UI.identification: [ {
+//    position: 40 ,
+//    label: '成本核算批量'
+//  } ]
+//  @EndUserText.label          : '成本核算批量'
+  @UI.hidden: true
+  Costinglotsize;
+
+  @UI.identification: [ {
+    position: 41 ,
+    label: '不计算成本'
+  } ]
+  @EndUserText.label          : '不计算成本'
+  Productiscostingrelevant;
+
+  @UI.identification: [ {
+    position: 42 ,
+    label: '用QS的成本估算'
+  } ]
+  @EndUserText.label          : '用QS的成本估算'
+  Ismaterialcostedwithqtystruc;
+
+  @UI.identification: [ {
+    position: 43 ,
+    label: '物料来源'
+  } ]
+  @EndUserText.label          : '物料来源'
+  Ismaterialrelatedorigin;
+
+  @UI.identification: [ {
+    position: 44
+  } ]
+  Profitcenter;
+
+  //  @UI.identification: [ {
+  //    position: 45 ,
+  //    criticality: 'ConfigDeprecationCode_Critlty'
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Deprecate',
+  //    label: '不赞成使用'
+  //  },
+  //  {
+  //    type: #FOR_ACTION,
+  //    dataAction: 'Invalidate',
+  //    label: '无效'
+  //  } ]
+  //  @UI.textArrangement: #TEXT_ONLY
+  @UI.hidden: true
+  ConfigDeprecationCode;
+}

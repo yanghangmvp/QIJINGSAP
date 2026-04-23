@@ -1,0 +1,25 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "采购价格主数据推送",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "catalogName": "ZZ_JCE_MM003"
+  },
+  "parameters": {
+    "singleValueParameters": [
+      {
+        "name": "JOB",
+        "value": ""
+      }
+    ],
+    "valueRangesParameters": [
+      {
+        "name": "INFNR",
+        "valueRanges": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'sd004',
+    typeNamePlural: 'sd004s',
+    title: {
+      type: #STANDARD,
+      label: '销售订单转积分-积分比例配置表',
+      value: 'Waers'
+    }
+  }
+}
+annotate view ZI_config_Ztsd004 with
+{
+  @UI.identification: [ {
+    position: 1
+  } ]
+  @UI.lineItem: [ {
+    position: 1
+  } ]
+  @Consumption.valueHelpDefinition: [ {
+    entity: {
+      name: 'I_CurrencyStdVH',
+      element: 'Currency'
+    },
+    useForValidation: true
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_config_Ztsd004',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: '销售订单转积分-积分比例配置表',
+    position: 1
+  } ]
+  @EndUserText.label: '货币'
+  Waers;
+
+  @UI.identification: [ {
+    position: 2
+  } ]
+  @UI.lineItem: [ {
+    position: 2
+  } ]
+  @EndUserText.label: '有效期开始'
+  Zzbegin;
+
+  @UI.identification: [ {
+    position: 3
+  } ]
+  @UI.lineItem: [ {
+    position: 3
+  } ]
+  @EndUserText.label: '有效期截止'
+  Zzend;
+
+  @UI.identification: [ {
+    position: 4
+  } ]
+  @UI.lineItem: [ {
+    position: 4
+  } ]
+  @EndUserText.label: '积分比例'
+  Zzbl;
+}

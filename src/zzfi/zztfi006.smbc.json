@@ -1,0 +1,42 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "维护 TA系统配置表",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZUI_CONFIG_FI006_O4",
+    "serviceName": "ZUI_CONFIG_FI006_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "FI006",
+    "name": "TA系统配置表",
+    "transportObject": "ZZTFI006  T",
+    "configurationGroup": "",
+    "skipRootEntity": true,
+    "enableFileUpload": false
+  },
+  "appConfiguration": {
+    "listReport": {
+      "initialLoad": "auto"
+    },
+    "objectPages": [
+      {
+        "entitySet": "FI006",
+        "variantManagement": "control"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "FI006all",
+        "tableType": "gridTable",
+        "selectAll": true,
+        "rowCountMode": "auto",
+        "frozenColumnCount": 1,
+        "creationModeName": "inlineCreationRows",
+        "createAtEnd": true,
+        "widthIncludingColumnHeader": true
+      }
+    ]
+  }
+}

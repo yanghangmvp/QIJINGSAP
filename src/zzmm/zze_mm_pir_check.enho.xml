@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_ENHO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOOL>BADI_IMPL</TOOL>
+   <SHORTTEXT>采购信息记录检查</SHORTTEXT>
+   <SPOT_NAME>ES_MMPUR_PIR_CHECK_DATA</SPOT_NAME>
+   <IMPL>
+    <ENH_BADI_IMPL_DATA>
+     <SPOT_NAME>ES_MMPUR_PIR_CHECK_DATA</SPOT_NAME>
+     <BADI_NAME>MMPUR_PIR_CHECK_DATA_BADI</BADI_NAME>
+     <IMPL_NAME>ZMMPUR_PIR_CHECK_DATA_BADI</IMPL_NAME>
+     <IMPL_CLASS>ZCL_MMPUR_PIR_CHECK_DATA_BADI</IMPL_CLASS>
+     <ACTIVE>X</ACTIVE>
+     <IMPL_SHORTTEXT>采购信息记录检查</IMPL_SHORTTEXT>
+     <LOCKED_IN_CUSTOMIZING>X</LOCKED_IN_CUSTOMIZING>
+    </ENH_BADI_IMPL_DATA>
+   </IMPL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

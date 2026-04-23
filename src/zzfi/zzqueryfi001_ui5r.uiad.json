@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "现金流量表"
+  },
+  "ui5AppDetails": {
+    "appId": "zzqueryfi001"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_47409D7DE34ADA90AC92FA78688B667F52F49DD0_TM",
+    "semanticObject": "zzqueryfi001",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_47409D7DE34ADA90AC92FA78688B667F52F49DD0_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "现金流量表",
+        "subtitle": "现金流量表"
+      }
+    }
+  ]
+}

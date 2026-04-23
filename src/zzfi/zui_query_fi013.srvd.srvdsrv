@@ -1,0 +1,4 @@
+@EndUserText.label: '固定资产变动明细表'
+define service ZUI_QUERY_FI013 {
+  expose zc_query_fi013 as fi013;
+}

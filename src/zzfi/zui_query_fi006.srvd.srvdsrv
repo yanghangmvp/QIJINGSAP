@@ -1,0 +1,4 @@
+@EndUserText.label: 'TA-现金流量'
+define service ZUI_QUERY_FI006 {
+  expose zc_query_FI006 as fi006;
+}

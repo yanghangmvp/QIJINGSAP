@@ -1,0 +1,4 @@
+@EndUserText.label: '司库银行日记账凭证推送'
+define service ZUI_QUERY_FI012 {
+  expose ZC_QUERY_FI012;
+}

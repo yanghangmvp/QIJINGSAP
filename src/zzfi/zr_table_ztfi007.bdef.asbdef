@@ -1,0 +1,118 @@
+managed implementation in class ZBP_TABLE_R_ZTFI007 unique;
+strict ( 1 );
+with draft;
+extensible;
+define behavior for ZR_TABLE_ZTFI007 alias FI007
+persistent table zztfi007a
+extensible
+draft table zztfi007_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+with additional save
+{
+  field ( mandatory : create )
+  Recordid,
+  Unitno;
+
+  field ( readonly )
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+
+  //  field ( readonly : update )
+  //  Recordid,
+  //  Unitno,
+  //  Accountno,
+  //  Accountname,
+  //  Bankno,
+  //  Openbank,
+  //  Recorddate,
+  //  Balancedir,
+  //  Currencyno,
+  //  Amount,
+  //  Opaccountno,
+  //  Opaccountname,
+  //  Opbranchbankname,
+  //  Hostid,
+  //  Ticketn,
+  //  Summary,
+  //  Remark,
+  //  Postscript,
+  //  Hosttime,
+  //  Merchantnumber,
+  //  Merchantname,
+  //  Accountingdocument,
+  //  Fiscalyear,
+  //  Postdata,
+  //  Flag,
+  //  Msgty,
+  //  Msgtx;
+
+  // side effects
+  //  {
+  //    field opAccountNo  affects field merchantnumber;
+  //   }
+
+
+  create;
+  update;
+  delete ( features : instance );
+
+  determination SetDeafultvalue on save { create; }
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action ( features : instance ) Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  action ( features : instance ) zlsbs result [1] $self;
+  action ( features : instance ) zhklx parameter ZA_POP_FI007_HKLX result [1] $self;
+
+
+  mapping for zztfi007a corresponding extensible
+    {
+      Recordid           = recordid;
+      Unitno             = unitno;
+      Accountno          = accountno;
+      Accountname        = accountname;
+      Bankno             = bankno;
+      Openbank           = openbank;
+      Recorddate         = recorddate;
+      Balancedir         = balancedir;
+      Currencyno         = currencyno;
+      Amount             = amount;
+      Opaccountno        = opaccountno;
+      Opaccountname      = opaccountname;
+      Opbranchbankname   = opbranchbankname;
+      Hostid             = hostid;
+      Ticketn            = ticketn;
+      Summary            = summary;
+      Remark             = remark;
+      Postscript         = postscript;
+      Hosttime           = hosttime;
+      Merchantnumber     = merchantnumber;
+      Merchantname       = merchantname;
+      Storecode          = storecode;
+      Storename          = storename;
+      Status             = status;
+      Accounttype        = accounttype;
+      Receivablestype    = receivablestype;
+      Accountingdocument = accountingdocument;
+      Fiscalyear         = fiscalyear;
+      Postdata           = postdata;
+      Flag               = flag;
+      Msgty              = msgty;
+      Msgtx              = msgtx;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LastChangedBy      = last_changed_by;
+      LastChangedAt      = last_changed_at;
+      LocalLastChangedAt = local_last_changed_at;
+    }
+
+}

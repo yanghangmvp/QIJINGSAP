@@ -1,0 +1,119 @@
+CLASS lhc_mm004 DEFINITION INHERITING FROM cl_abap_behavior_handler.
+  PRIVATE SECTION.
+
+    METHODS get_instance_features FOR INSTANCE FEATURES
+      IMPORTING keys REQUEST requested_features FOR mm004 RESULT result.
+
+    METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
+      IMPORTING keys REQUEST requested_authorizations FOR mm004 RESULT result.
+
+    METHODS read FOR READ
+      IMPORTING keys FOR READ mm004 RESULT result.
+
+    METHODS lock FOR LOCK
+      IMPORTING keys FOR LOCK mm004.
+
+    METHODS zpush FOR MODIFY
+      IMPORTING keys FOR ACTION mm004~zpush RESULT result.
+
+ENDCLASS.
+
+CLASS lhc_mm004 IMPLEMENTATION.
+
+  METHOD get_instance_features.
+  ENDMETHOD.
+
+  METHOD get_instance_authorizations.
+  ENDMETHOD.
+
+  METHOD read.
+
+    DATA: lr_mm004 TYPE REF TO zzcl_query_mm004.
+    DATA: lt_result TYPE TABLE OF zc_query_mm004.
+
+    DATA:lt_filters TYPE if_rap_query_filter=>tt_name_range_pairs.
+    DATA:lt_range TYPE if_rap_query_filter=>tt_range_option.
+    LOOP AT keys INTO DATA(ls_key).
+      APPEND VALUE #( low = ls_key-%key-uuid
+                      sign = 'I'
+                      option = 'EQ'  ) TO lt_range.
+    ENDLOOP.
+
+    APPEND VALUE #(  name = 'UUID'
+                     range = lt_range
+    ) TO lt_filters.
+
+    "获取数据
+    CREATE OBJECT lr_mm004.
+    CALL METHOD lr_mm004->read_data
+      EXPORTING
+        it_filters = lt_filters
+      IMPORTING
+        et_result  = lt_result.
+
+    MOVE-CORRESPONDING lt_result TO result.
+
+  ENDMETHOD.
+
+  METHOD lock.
+  ENDMETHOD.
+
+  METHOD zpush.
+    DATA: lr_mm018 TYPE REF TO zzcl_api_mm018.
+    DATA: o_resp TYPE zzs_rest_out.
+    DATA: lt_in  TYPE zzt_mmi018_in.
+    CREATE OBJECT lr_mm018.
+
+    LOOP AT keys INTO DATA(key).
+      APPEND key-%key-uuid TO lt_in.
+
+      APPEND VALUE #( %tky = key-%tky
+                      %param = CORRESPONDING #( key )
+                 ) TO result.
+    ENDLOOP.
+
+    o_resp = lr_mm018->push( lt_in ).
+
+    APPEND VALUE #( %msg     = new_message_with_text(
+                    severity = if_abap_behv_message=>severity-success
+                    text     = '推送成功,结果请查看接口日志'
+                        )
+             )  TO reported-mm004.
+
+  ENDMETHOD.
+
+ENDCLASS.
+
+CLASS lsc_zc_query_mm004 DEFINITION INHERITING FROM cl_abap_behavior_saver.
+  PROTECTED SECTION.
+
+    METHODS finalize REDEFINITION.
+
+    METHODS check_before_save REDEFINITION.
+
+    METHODS save REDEFINITION.
+
+    METHODS cleanup REDEFINITION.
+
+    METHODS cleanup_finalize REDEFINITION.
+
+ENDCLASS.
+
+CLASS lsc_zc_query_mm004 IMPLEMENTATION.
+
+  METHOD finalize.
+  ENDMETHOD.
+
+  METHOD check_before_save.
+  ENDMETHOD.
+
+  METHOD save.
+  ENDMETHOD.
+
+  METHOD cleanup.
+  ENDMETHOD.
+
+  METHOD cleanup_finalize.
+  ENDMETHOD.
+
+ENDCLASS.

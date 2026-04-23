@@ -1,0 +1,83 @@
+managed with additional save implementation in class ZBP_I_TABLE_ZTMM001_S unique;
+strict;
+with draft;
+define behavior for ZI_TABLE_Ztmm001_S alias Ztmm001All
+draft table zztmm001_d_s
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master ( global )
+{
+  field ( readonly )
+  SingletonID;
+
+  field ( notrigger )
+  SingletonID,
+  LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _Ztmm001 { create ( features : instance ); with draft; }
+
+}
+
+define behavior for ZI_TABLE_Ztmm001 alias Ztmm001 ##UNMAPPED_FIELD
+persistent table zztmm001
+draft table zztmm001_d
+lock dependent by _Ztmm001All
+authorization dependent by _Ztmm001All
+{
+  field ( mandatory : create )
+  Modelcode;
+
+  field ( readonly )
+  SingletonID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt,
+  ConfigDeprecationCode,
+  ConfigDeprecationCode_Critlty;
+
+  field ( readonly : update )
+  Modelcode;
+
+  field ( notrigger )
+  SingletonID,
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+
+  update ( features : global );
+  delete ( features : instance );
+
+  action ( features : instance ) Deprecate result [1] $self;
+  action ( features : instance ) Invalidate result [1] $self;
+  factory action ( features : instance ) Copy parameter ZC_TABLE_ZTMM001 [1];
+
+  mapping for zztmm001
+    {
+      Modelcode             = MODELCODE;
+      ConfigDeprecationCode = CONFIGDEPRECATIONCODE;
+      CreatedBy             = CREATED_BY;
+      CreatedAt             = CREATED_AT;
+      LastChangedBy         = LAST_CHANGED_BY;
+      LastChangedAt         = LAST_CHANGED_AT;
+      LocalLastChangedAt    = LOCAL_LAST_CHANGED_AT;
+    }
+
+  association _Ztmm001All { with draft; }
+
+}

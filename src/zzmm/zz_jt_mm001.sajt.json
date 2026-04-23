@@ -1,0 +1,25 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "供应商主数据推送",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "catalogName": "ZZ_JCE_MM001"
+  },
+  "parameters": {
+    "singleValueParameters": [
+      {
+        "name": "JOB",
+        "value": ""
+      }
+    ],
+    "valueRangesParameters": [
+      {
+        "name": "LIFNR",
+        "valueRanges": []
+      }
+    ]
+  }
+}

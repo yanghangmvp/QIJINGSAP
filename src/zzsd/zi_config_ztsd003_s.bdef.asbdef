@@ -1,0 +1,84 @@
+managed implementation in class ZBP_I_CONFIG_ZTSD003_S unique;
+strict;
+with draft;
+define behavior for ZI_CONFIG_Ztsd003_S alias Ztsd003All
+draft table ZZTSD003_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+{
+  field ( readonly )
+   SingletonID;
+
+  field ( notrigger )
+   SingletonID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _Ztsd003 { create ( features : instance ); with draft; }
+
+}
+
+define behavior for ZI_CONFIG_Ztsd003 alias Ztsd003 ##UNMAPPED_FIELD
+persistent table ZZTSD003
+draft table ZZTSD003_D
+etag master LocalLastChangedAt
+lock dependent by _Ztsd003All
+authorization dependent by _Ztsd003All
+{
+  field ( mandatory : create )
+   Salesorganization,
+   Fsysid,
+   Zdmssotype;
+
+  field ( readonly )
+   SingletonID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   Salesorganization,
+   Fsysid,
+   Zdmssotype;
+
+  field ( notrigger )
+   SingletonID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZZTSD003
+  {
+    Salesorganization = SALESORGANIZATION;
+    Fsysid = FSYSID;
+    Zdmssotype = ZDMSSOTYPE;
+    Zzxflag = ZZXFLAG;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+  association _Ztsd003All { with draft; }
+
+}

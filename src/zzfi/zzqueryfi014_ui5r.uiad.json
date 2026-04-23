@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "收入成本表"
+  },
+  "ui5AppDetails": {
+    "appId": "zzqueryfi014"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_24E306CDFCBC9EC1EEDD0969EED74C4D9F74D3DB_TM",
+    "semanticObject": "zzqueryfi014",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_24E306CDFCBC9EC1EEDD0969EED74C4D9F74D3DB_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "收入成本表",
+        "subtitle": "收入成本表"
+      }
+    }
+  ]
+}

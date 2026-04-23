@@ -1,0 +1,4 @@
+@EndUserText.label: '在建工程明细表'
+define service ZUI_QUERY_FI015 {
+  expose zc_query_fi015 as fi015;
+}

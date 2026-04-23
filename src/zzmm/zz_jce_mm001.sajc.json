@@ -1,0 +1,19 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "供应商主数据推送",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZZCL_JOB_MM001"
+  },
+  "parameters": [
+    {
+      "name": "LIFNR"
+    },
+    {
+      "name": "JOB"
+    }
+  ]
+}

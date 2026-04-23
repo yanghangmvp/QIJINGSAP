@@ -1,0 +1,9 @@
+CLASS zbp_r_zt_rest_log DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_zt_rest_log.
+protected section.
+private section.
+ENDCLASS.
+
+
+
+CLASS ZBP_R_ZT_REST_LOG IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,4 @@
+@EndUserText.label: '采购价格推送'
+define service ZUI_QUERY_MM003 {
+  expose zc_query_mm003 as mm003;
+}

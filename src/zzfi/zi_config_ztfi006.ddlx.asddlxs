@@ -1,0 +1,59 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'FI006all', 
+    typeNamePlural: 'FI006alls', 
+    title: {
+      type: #STANDARD, 
+      label: 'TA系统配置表', 
+      value: 'Zzenumb'
+    }
+  }
+}
+annotate view ZI_CONFIG_ZTFI006 with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @UI.lineItem: [ {
+    position: 1 
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_CONFIG_ZTFI006', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'TA系统配置表', 
+    position: 1 
+  } ]
+  Zzenumb;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: '数据库名'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: '数据库名'
+  } ]
+  Zzdatabase;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: '数据库表名'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: '数据库表名'
+  } ]
+  Zztable;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: '分包大小'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: '分包大小'
+  } ]
+  Zzpack;
+}

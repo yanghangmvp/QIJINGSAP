@@ -1,0 +1,145 @@
+managed implementation in class ZBP_R_TABLE_ZTSD001 unique;
+strict ( 1 );
+with draft;
+extensible;
+define behavior for ZR_TABLE_ZTSD001 alias SD001
+persistent table zztsd001
+extensible
+draft table zztsd001_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+{
+  field ( mandatory : create )
+  Purchaseorderbycustomer;
+
+  field ( readonly )
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+  field ( readonly : update )
+  Purchaseorderbycustomer;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) zzprocess result [1] $self;
+
+  association _SD002 { create ( features : instance ); }
+
+  mapping for zztsd001 corresponding extensible
+    {
+      Purchaseorderbycustomer        = PURCHASEORDERBYCUSTOMER;
+      Fsysid                         = FSYSID;
+      Salesdocumenttype              = SALESDOCUMENTTYPE;
+      Salesdocumentdate              = SALESDOCUMENTDATE;
+      Salesorganization              = SALESORGANIZATION;
+      Distributionchannel            = DISTRIBUTIONCHANNEL;
+      Organizationdivision           = ORGANIZATIONDIVISION;
+      Salesoffice                    = SALESOFFICE;
+      Salesgroup                     = SALESGROUP;
+      Soldtoparty                    = SOLDTOPARTY;
+      Transactioncurrency            = TRANSACTIONCURRENCY;
+      Sddocumentreason               = SDDOCUMENTREASON;
+      Zlogisticscompany              = ZLOGISTICSCOMPANY;
+      Zlogisticsnumber               = ZLOGISTICSNUMBER;
+      Zpaymentdate                   = ZPAYMENTDATE;
+      Zpaymenttime                   = ZPAYMENTTIME;
+      Zpaymentmethod                 = ZPAYMENTMETHOD;
+      Zpaymentamount                 = ZPAYMENTAMOUNT;
+      Zhbeizu                        = ZHBEIZU;
+      Zplatformcode                  = ZPLATFORMCODE;
+      Zdmssotype                     = ZDMSSOTYPE;
+      Customeraccountassignmentgroup = CUSTOMERACCOUNTASSIGNMENTGROUP;
+      Zfphm                          = ZFPHM;
+      Zdua1                          = ZDUA1;
+      Zdua2                          = ZDUA2;
+      Zdua3                          = ZDUA3;
+      Zdua4                          = ZDUA4;
+      Zdua5                          = ZDUA5;
+      Salesdocument                  = SALESDOCUMENT;
+      Deliverydocument               = DELIVERYDOCUMENT;
+      Billingdocument                = BILLINGDOCUMENT;
+      Zzxzt                          = ZZXZT;
+      Msgty                          = MSGTY;
+      Msgtx                          = MSGTX;
+      CreatedBy                      = CREATED_BY;
+      CreatedAt                      = CREATED_AT;
+      LastChangedBy                  = LAST_CHANGED_BY;
+      LastChangedAt                  = LAST_CHANGED_AT;
+      LocalLastChangedAt             = LOCAL_LAST_CHANGED_AT;
+    }
+
+}
+
+define behavior for ZR_TABLE_ZTSD002 alias SD002
+persistent table zztsd002
+extensible
+draft table zztsd002_d
+lock dependent by _SD001
+authorization master ( global )
+{
+  field ( mandatory : create )
+  Purchaseorderbycustomer,
+  Salesdocumentitem;
+
+  field ( readonly )
+  CreatedBy,
+  CreatedAt,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+  field ( readonly : update )
+  Purchaseorderbycustomer,
+  Salesdocumentitem;
+
+
+
+  update;
+  delete;
+
+  association _SD001;
+
+  mapping for zztsd002 corresponding extensible
+    {
+      Purchaseorderbycustomer   = PURCHASEORDERBYCUSTOMER;
+      Salesdocumentitem         = SALESDOCUMENTITEM;
+      Salesdocumentitemcategory = SALESDOCUMENTITEMCATEGORY;
+      Product                   = PRODUCT;
+      Orderquantity             = ORDERQUANTITY;
+      Orderquantityunit         = ORDERQUANTITYUNIT;
+      Batch                     = BATCH;
+      Plant                     = PLANT;
+      Serialnumber              = SERIALNUMBER;
+      Storagelocation           = STORAGELOCATION;
+      Zbeizuitem                = ZBEIZUITEM;
+      Zplatformcode             = ZPLATFORMCODE;
+      Zdmssotype                = ZDMSSOTYPE;
+      Conditiontype             = CONDITIONTYPE;
+      Conditionratevalue        = CONDITIONRATEVALUE;
+      Conditionquantity         = CONDITIONQUANTITY;
+      Conditionamount           = CONDITIONAMOUNT;
+      Zdua1                     = ZDUA1;
+      Zdua2                     = ZDUA2;
+      Zdua3                     = ZDUA3;
+      Zdua4                     = ZDUA4;
+      Zdua5                     = ZDUA5;
+      CreatedBy                 = CREATED_BY;
+      CreatedAt                 = CREATED_AT;
+      LastChangedBy             = LAST_CHANGED_BY;
+      LastChangedAt             = LAST_CHANGED_AT;
+      LocalLastChangedAt        = LOCAL_LAST_CHANGED_AT;
+    }
+
+}

@@ -1,0 +1,38 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Ztfi008',
+    typeNamePlural: 'Ztfi008s',
+    title: {
+      type: #STANDARD,
+      label: '会计凭证审核平台-审核权限配置表',
+      value: 'Datasource'
+    }
+  }
+}
+annotate view ZI_config_Ztfi008 with
+{
+  @UI.identification: [ {
+    position: 1
+  } ]
+  @UI.lineItem: [ {
+    position: 1
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_config_Ztfi008',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: '会计凭证审核平台-审核权限配置表',
+    position: 1
+  } ]
+  Datasource;
+
+  @UI.identification: [ {
+    position: 2
+  } ]
+  @UI.lineItem: [ {
+    position: 2
+  } ]
+  @EndUserText.label            : '邮箱'
+  Zzuserid;
+}

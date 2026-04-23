@@ -1,0 +1,19 @@
+unmanaged implementation in class zbp_c_query_fi004 unique;
+strict; //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for zc_query_FI004 alias FI004
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  //  create ( authorization : global );
+  //  update;
+  //  delete;
+  field ( readonly ) UUID;
+
+  action ( features : instance ) zpush result [1] $self;
+  action ( features : instance ) zchange parameter ZA_POP_FI004_change result [1] $self;
+
+  static factory action ExcelUploadDialog parameter ZA_POP_FI004_EXCEL [0..*];
+}

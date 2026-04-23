@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "zh",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "物料主数据推送"
+  },
+  "ui5AppDetails": {
+    "appId": "zzquerymm002"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_666CAF5CD03D0BF1D12381D7ABC6A80F07CA651B_TM",
+    "semanticObject": "zzquerymm002",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_666CAF5CD03D0BF1D12381D7ABC6A80F07CA651B_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "物料主数据推送",
+        "subtitle": "物料主数据推送"
+      }
+    }
+  ]
+}
